@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Website</title>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-analytics.js"></script>
+    <link rel="stylesheet" type="text/css" href="all.css" />
+</head>
+<body>
+    <div class="topnav">
+        <img src="../src/resources/Logo">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">Upload</a>
+        <a href="#about">About</a>
+        <div class="topnav-right">
+            <img src="../src/resources/bell">
+            <p>Balance: $0.00</p>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Account</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Manage Account</a>
+                    <a href="#">Manage Surveys</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home" id="home">
+        <h1>Home</h1><br>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+<script src="fireBase.js"></script>
+<script src="home.js"></script>
+
+</body>
+</html>
