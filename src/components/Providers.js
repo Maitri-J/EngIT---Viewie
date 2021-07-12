@@ -1,11 +1,11 @@
 import React from 'react'
-import FirebaseProvider from './FirebaseProvider'
+import FirebaseProviders from './FirebaseProviders'
 
 const Providers = () => {
     return (
-        <FirebaseProvider>
-
-        </FirebaseProvider>
+        <FirebaseProviders>
+            <p>Nice</p>
+        </FirebaseProviders>
     )
 }
 
