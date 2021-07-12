@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey Website</title>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.4/firebase-analytics.js"></script>
+    <link rel="stylesheet" type="text/css" href="all.css" />
+</head>
+<body>
+
+    <div class="login" id="login">
+        <h1>Login:</h1><br>
+        <input type="text" id="email" placeholder="Email"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <a href="forgotPassword.html">Forgot your password?</a><br>
+        <p style="color:red" id="errorMessage"></p>
+        <button onclick="login()">Login</button> or <button onclick="googleLogin()">Sign in with google</button>
+        <p>Don't have an account? <a href="register.html">Register Now</a></p>
+    </div>
+
+<script src="fireBase.js"></script>
+<script src="login.js"></script>
+
+</body>
+</html>
