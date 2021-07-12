@@ -1,10 +1,12 @@
 import logo from './resources/logo.svg';
 import './stylesheets/App.css';
-import Providers from './components/Providers';
+import Providers from './context/Providers';
 
 function App() {
   return (
-      <Providers />
+      <div>
+        <Providers />
+      </div>
   );
 }
 
