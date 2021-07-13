@@ -6,25 +6,25 @@ body {
 .logo 
 {
     position: absolute;
-    width: 159px;
+    width: 212px;
     height: 159px;
-    left: 14px;
+    left: 18.67px;
     top: 0px;
 }
 
 .abstract
 {
     position: absolute;
-    width: 644px;
+    width: 728px;
     height: 680px;
-    left: 38px;
+    left: 94px;
     top: 110px;
 }
 
 .confetti
 {
     position: absolute;
-    width: 720px;
+    width: 960px;
     height: 1024px;
     left: 0px;
     top: 0px;
@@ -33,9 +33,9 @@ body {
 .accessContent 
 {
     position: absolute;
-    width: 293px;
+    width: 390.67px;
     height: 108px;
-    left: 128px;
+    left: 170.67px;
     top: 790px;
 
     font-family: Poppins;
@@ -45,16 +45,15 @@ body {
     line-height: 54px;
 
     color: #FFFFFF;
-
 }
 
 .loginText 
 {
     position: absolute;
-    width: 143px;
+    width: 190.67px;
     height: 72px;
-    left: 826px;
-    top: 123px;
+    left: 1149px;
+    top: 110px;
 
     font-family: Poppins;
     font-style: normal;
@@ -63,16 +62,17 @@ body {
     line-height: 72px;
     /* identical to box height */
 
+
     color: #313131;
 }
 
 .noAccount
 {
     position: absolute;
-    width: 335px;
+    width: 446.67px;
     height: 27px;
-    left: 826px;
-    top: 208px;
+    left: 1149px;
+    top: 195px;
 
     font-family: Poppins;
     font-style: normal;
@@ -88,9 +88,9 @@ body {
 .white
 {
     position: absolute;
-    width: 720px;
+    width: 960px;
     height: 1024px;
-    left: 720px;
+    left: 960px;
     top: 0px;
 
     background: #FFFFFF;
@@ -99,9 +99,9 @@ body {
 .loginBtn
 {
     position: absolute;
-    width: 505px;
+    width: 579.7px;
     height: 67px;
-    left: 826px;
+    left: 1150.15px;
     top: 613px;
 
     background: #9767F5;
@@ -114,6 +114,7 @@ body {
     line-height: 36px;
     /* identical to box height */
 
+
     color: #FFFFFF;
     cursor:pointer;
 }
@@ -121,9 +122,9 @@ body {
 .googleBtn
 {
     position: absolute;
-    width: 506px;
+    width: 580.85px;
     height: 70px;
-    left: 825px;
+    left: 1149px;
     top: 828px;
 
     background: #FFFFFF;
@@ -139,7 +140,7 @@ body {
     position: absolute;
     width: 231px;
     height: 36px;
-    left: 162px;
+    left: 185.96px;
     top: 17px;
 
     font-family: Poppins;
@@ -147,14 +148,18 @@ body {
     font-weight: 500;
     font-size: 24px;
     line-height: 36px;
+    /* identical to box height */
+
+
+    color: #000000;
 }
 
 .googleLogo
 {
     position: absolute;
-    width: 38x;
-    height: 38px;
-    left: 100px;
+    width: 39x;
+    height: 39px;
+    left: 114.79px;
     top: 16px;
     z-index: 1;
 }
@@ -162,9 +167,9 @@ body {
 .emailText 
 {
     position: absolute;
-    width: 127px;
+    width: 145.79px;
     height: 33px;
-    left: 826px;
+    left: 1150.15px;
     top: 294px;
 
     font-family: Poppins;
@@ -179,9 +184,9 @@ body {
 .emailInput
 {
     position: absolute;
-    width: 506px;
+    width: 580.85px;
     height: 70px;
-    left: 826px;
+    left: 1150.15px;
     top: 327px;
 
     background: #FFFFFF;
@@ -193,9 +198,9 @@ body {
 .passwordText 
 {
     position: absolute;
-    width: 127px;
+    width: 145.79px;
     height: 33px;
-    left: 826px;
+    left: 1150.15px;
     top: 433px;
 
     font-family: Poppins;
@@ -205,14 +210,15 @@ body {
     line-height: 27px;
 
     color: #313131;
+
 }
 
 .passwordInput
 {
     position: absolute;
-    width: 506px;
+    width: 580.85px;
     height: 70px;
-    left: 826px;
+    left: 1150.15px;
     top: 466px;
 
     background: #FFFFFF;
@@ -224,9 +230,9 @@ body {
 .forgotPassword
 {
     position: absolute;
-    width: 205px;
+    width: 235.33px;
     height: 27px;
-    left: 1127px;
+    left: 1495.67px;
     top: 547px;
 
     font-family: Poppins;
@@ -243,18 +249,18 @@ body {
 .lines
 {
     position: absolute;
-    width: 505px;
+    width: 579.7px;
     height: 1px;
-    left: 826px;
+    left: 1150.15px;
     top: 750px;
 }
 
 .orText
 {
     position: absolute;
-    width: 19px;
+    width: 21.81px;
     height: 27px;
-    left: 1070px;
+    left: 1430.24px;
     top: 736px;
 
     font-family: Poppins;
