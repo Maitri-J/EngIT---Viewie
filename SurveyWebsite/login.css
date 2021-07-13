@@ -273,3 +273,18 @@ body {
 
     color: rgba(0, 0, 0, 0.2);
 }
+
+.errorMessage
+{
+    position: absolute;
+    width: 580px;
+    height: 33px;
+    left: 1150px;
+    top: 574px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+}
