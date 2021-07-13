@@ -3,6 +3,7 @@ import { AuthProviders } from './AuthProviders'
 import Signup from '../components/Signup'
 import Home from '../components/Home';
 import Login from '../components/Login';
+import ForgetPassword from '../components/ForgetPassword';
 
 import {
     Switch,
@@ -23,6 +24,9 @@ const Providers = () => {
                 </Route>
                 <Route path="/login">
                     <Login />
+                </Route>
+                <Route path="/resetpassword">
+                    <ForgetPassword />
                 </Route>
             </Switch>
         </AuthProviders>

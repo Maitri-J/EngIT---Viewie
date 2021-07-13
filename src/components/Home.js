@@ -1,7 +1,7 @@
 import React from 'react'
 import SurveyCard from './SurveyCard'
 import { addSurvey } from "../tools/Firebase"
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Home = () => {

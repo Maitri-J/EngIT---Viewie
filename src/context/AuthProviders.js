@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react'
-import { FBaseAuth, firebase } from '../tools/Firebase';
+import { FBase, FBaseAuth, firebase } from '../tools/Firebase';
 
 const AuthContext = createContext();
 
@@ -24,12 +24,12 @@ const AuthProviders = ({ children }) => {
             if (user) {
                 // User is signed in, see docs for a list of available properties
                 // https://firebase.google.com/docs/reference/js/firebase.User
-                var user = FBaseAuth.currentUser;
+                var FBaseUser = FBaseAuth.currentUser;
           
-                if (user != null){
-                  if (user.emailVerified){
+                if (FBaseUser != null){
+                  if (FBaseUser.emailVerified){
                     // route to home page and logged in => routing yet to be implemented
-                    setUser(user);
+                    setUser(FBaseUser);
 
                     // window.open("home.html", "_self");
 
@@ -48,10 +48,9 @@ const AuthProviders = ({ children }) => {
         return unsubscribe;
     }, [])
     
-    const regularLogin = () => {
+    const regularLogin = (email, password) => {
       // API Call to Firebase => Login
-      
-      
+      return FBaseAuth.signInWithEmailAndPassword(email, password);
     }
 
     const googleLogin = () => {
@@ -80,23 +79,30 @@ const AuthProviders = ({ children }) => {
         // The firebase.auth.AuthCredential type that was used.
         var credential = error.credential;
         // ...
+        console.log(`${errorCode}, ${errorMessage}, ${email}, ${credential}`)
       });
     }
 
     const logout = () => {
       // API Call to Firebase => Logout
+      return FBaseAuth.signOut();
     }
 
     const signup = (email, password) => {
       // API Call to Firebase => Signup
       return FBaseAuth.createUserWithEmailAndPassword(email, password);
-  }
+    }
+
+    const resetPassword = (email) => {
+      return FBaseAuth.sendPasswordResetEmail(email);
+    }
 
     return (
         // Providing context for all children react elements to use => similar to global state
         // We pass user information and the ability to login and logout function
 
-        <AuthContext.Provider value={{currentUser, regularLogin, googleLogin, logout, signup}}>
+        <AuthContext.Provider value={{currentUser, regularLogin, googleLogin, 
+        logout, signup, resetPassword, setUser}}>
             {children}
         </AuthContext.Provider>    
     )

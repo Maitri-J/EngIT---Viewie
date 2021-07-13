@@ -2,7 +2,7 @@ import {React, useRef, useState, } from 'react'
 import { useAuthContext } from '../context/AuthProviders'
 import { FBaseAuth } from '../tools/Firebase'
 
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Login = () => {
     // similar to useState but value is held after re-render
@@ -14,37 +14,40 @@ const Login = () => {
     const [message, setMessage] = useState(null);
 
     // holds state for if promise is being processed
-    const [isLoading, setLoading] = useState(false);
+    // const [isLoading, setLoading] = useState(false);
 
-    // retrieve the signup function given by the Auth Provider
-    const { signup, currentUser } = useAuthContext()
+    // retrieve functions given by the Auth Provider
+    const { currentUser, googleLogin, regularLogin, setUser, logout } = useAuthContext()
 
     // runs when the form is submit
     const submitForm = (e) => {
         e.preventDefault();
-        
-        setLoading(true);
 
-        // call signup function from AuthProvider 
-        signup(emailRef.current.value, passwordRef.current.value)
-        .then((userCredential) => {
+        // call regularLogin function
+        regularLogin(emailRef.current.value, passwordRef.current.value).then((userCredential) => {
           // Signed in
-          FBaseAuth.currentUser.sendEmailVerification()
-          .then(() => {
-            // Email verification sent!
-            // ...
-            setMessage("Confirmation email sent please verify to login");
-          });
+          var user = userCredential.user;
+          var emailVerified = user.emailVerified;
+
+          console.log(JSON.stringify(user));
+
+          if (emailVerified){
+            // window.open("home.html", "_self");
+            setMessage("Successful sign in");
+            setUser(user);
+          } 
+          else {
+            setMessage("Please verify your email");
+            logout();
+          }
+          // ...
         })
-
         .catch((error) => {
-        //   var errorCode = error.code;
-          var errorMessage = error.message;
-          setMessage(errorMessage);
-          // ..
+            // var errorCode = error.code;
+            var errorMessage = error.message;
+    
+            setMessage(errorMessage);
         });
-
-        setLoading(false);  
     }
 
     return (
@@ -70,13 +73,13 @@ const Login = () => {
 
                 {/* <p style="color:red" id="errorMessage"></p> */}
 
-                {!isLoading &&
-                <button type="submit">Login</button>     
-                }
+                <Link to="/resetpassword"><p class="forgotPassword">Forget your password?</p></Link>
+
+                <button type="submit">Login</button>    
                 or 
 
                 {/* Need to create google login */}
-                <button onclick="googleLogin()">Sign in with google</button>
+                <button onClick={googleLogin}>Sign in with google</button>
                 
 
                 <p>Need an account? <Link to="/signup">Sign Up</Link></p>

@@ -2,7 +2,7 @@ import {React, useRef, useState, } from 'react'
 import { useAuthContext } from '../context/AuthProviders'
 import { FBaseAuth } from '../tools/Firebase'
 
-import { NavLink, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const Signup = () => {
@@ -19,14 +19,14 @@ const Signup = () => {
     const [isLoading, setLoading] = useState(false);
 
     // retrieve the signup function given by the Auth Provider
-    const { signup, currentUser, googleLogin } = useAuthContext()
+    const { signup, currentUser, googleLogin, logout } = useAuthContext()
 
     // runs when the form is submit
     const submitForm = (e) => {
         e.preventDefault();
 
         // Checks to ensure password typed are the same 
-        if(passwordConfirmRef.current.value != passwordRef.current.value){
+        if(passwordConfirmRef.current.value !== passwordRef.current.value){
             setMessage("Error: Passwords entered do not match");
             return;
         }
@@ -51,6 +51,8 @@ const Signup = () => {
           setMessage(errorMessage);
           // ..
         });
+        
+        logout();
 
         setLoading(false);  
     }

@@ -1,6 +1,5 @@
-import logo from './resources/logo.svg';
+// import logo from './resources/logo.svg';
 import './stylesheets/App.css';
-import Providers from './context/Providers';
 import Routes from './context/Routes';
 
 function App() {
