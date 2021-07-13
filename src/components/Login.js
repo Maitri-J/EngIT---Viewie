@@ -4,13 +4,11 @@ import { FBaseAuth } from '../tools/Firebase'
 
 import { NavLink, Link } from 'react-router-dom'
 
-
-const Signup = () => {
+const Login = () => {
     // similar to useState but value is held after re-render
     const userNameRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
-    const passwordConfirmRef = useRef()
     
     // holds messages for success/ failure messages
     const [message, setMessage] = useState(null);
@@ -19,17 +17,11 @@ const Signup = () => {
     const [isLoading, setLoading] = useState(false);
 
     // retrieve the signup function given by the Auth Provider
-    const { signup, currentUser, googleLogin } = useAuthContext()
+    const { signup, currentUser } = useAuthContext()
 
     // runs when the form is submit
     const submitForm = (e) => {
         e.preventDefault();
-
-        // Checks to ensure password typed are the same 
-        if(passwordConfirmRef.current.value != passwordRef.current.value){
-            setMessage("Error: Passwords entered do not match");
-            return;
-        }
         
         setLoading(true);
 
@@ -56,8 +48,8 @@ const Signup = () => {
     }
 
     return (
-        <div class="register" id="register">
-            <h1>Register:</h1>
+        <div class="login" id="login">
+            <h1>Login:</h1>
             
             <form onSubmit={submitForm}>
               
@@ -75,24 +67,22 @@ const Signup = () => {
 
                 <label>Password: </label>
                 <input type="password" id="password" ref={passwordRef} /><br />
-                <input type="password" id="confirmPassword" ref={passwordConfirmRef} /><br />
 
                 {/* <p style="color:red" id="errorMessage"></p> */}
 
                 {!isLoading &&
-                <button type="submit">Create Account</button>     
+                <button type="submit">Login</button>     
                 }
                 or 
 
                 {/* Need to create google login */}
-                <button onClick={googleLogin}>Sign in with google</button>
+                <button onclick="googleLogin()">Sign in with google</button>
+                
 
-                <p>Already have an account? <Link to="/login">Login</Link></p>
-                <p><Link to="/">Home</Link></p>
-
+                <p>Need an account? <Link to="/signup">Sign Up</Link></p>
             </form>
         </div>
     )
 }
 
-export default Signup;
+export default Login

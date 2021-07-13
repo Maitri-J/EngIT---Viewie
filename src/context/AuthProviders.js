@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react'
-import { FBaseAuth } from '../tools/Firebase';
+import { FBaseAuth, firebase } from '../tools/Firebase';
 
 const AuthContext = createContext();
 
@@ -16,39 +16,87 @@ const AuthProviders = ({ children }) => {
 
     // Default - user not logged in
     // Holds a global state for all components if a user is logged in
-    const [user, setUser] = useState(null);
+    const [currentUser, setUser] = useState(null);
 
     // only set when login state has changed
     useEffect(() => {
         const unsubscribe = FBaseAuth.onAuthStateChanged(user => {
-            setUser(user);
+            if (user) {
+                // User is signed in, see docs for a list of available properties
+                // https://firebase.google.com/docs/reference/js/firebase.User
+                var user = FBaseAuth.currentUser;
+          
+                if (user != null){
+                  if (user.emailVerified){
+                    // route to home page and logged in => routing yet to be implemented
+                    setUser(user);
+
+                    // window.open("home.html", "_self");
+
+                  } else {
+                    FBaseAuth.signOut();
+                  }
+                }
+              } else {
+                // User is signed out
+                // ...
+              }
+            
         })
 
         // removes the onAuthStateChanged Listener when AuthProvider component is unmounted
         return unsubscribe;
     }, [])
     
+    const regularLogin = () => {
+      // API Call to Firebase => Login
+      
+      
+    }
+
+    const googleLogin = () => {
+      // API Call to Firebase => Login with Google Account
+
+      var provider = new firebase.auth.GoogleAuthProvider();
+
+      FBaseAuth
+      .signInWithPopup(provider)
+      .then((result) => {
+        // /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+    
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        var token = credential.accessToken;
+        // The signed-in user info.
+        setUser(result.user);
+        // ...
+
+      }).catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+    }
+
+    const logout = () => {
+      // API Call to Firebase => Logout
+    }
+
+    const signup = (email, password) => {
+      // API Call to Firebase => Signup
+      return FBaseAuth.createUserWithEmailAndPassword(email, password);
+  }
 
     return (
         // Providing context for all children react elements to use => similar to global state
         // We pass user information and the ability to login and logout function
 
-        <AuthContext.Provider value={{
-        user,
-        login: () => {
-            // API Call to Firebase => Login
-        },
-
-        logout: () =>{
-            // API Call to Firebase => Logout
-        },
-
-        signup: (email, password) => {
-            // API Call to Firebase => Signup
-            return FBaseAuth.createUserWithEmailAndPassword(email, password);
-        }
-        
-        }}>
+        <AuthContext.Provider value={{currentUser, regularLogin, googleLogin, logout, signup}}>
             {children}
         </AuthContext.Provider>    
     )

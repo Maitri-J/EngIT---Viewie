@@ -28,4 +28,4 @@ const addSurvey = (surveyInfo, publisherID) => {
     });
 }
 
-export { FBase, FBaseAuth, addSurvey };
+export { FBase, FBaseAuth, addSurvey, firebase };
