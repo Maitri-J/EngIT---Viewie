@@ -1,6 +1,8 @@
 import React from 'react'
 import SurveyCard from './SurveyCard'
 import { addSurvey } from "../tools/Firebase"
+import { NavLink, Link } from 'react-router-dom'
+
 
 const Home = () => {
     
@@ -19,6 +21,7 @@ const Home = () => {
     return (
         <div>
             <SurveyCard surveyInfo={testInfo} />
+            <Link to="/signup">Sign Up Here</Link>
         </div>
     )
 }
