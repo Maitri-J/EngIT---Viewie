@@ -1,6 +1,5 @@
 body {
     background-color:#9767F5;
-    ;
 }
 
 .logo 
@@ -106,6 +105,7 @@ body {
 
     background: #9767F5;
     border-radius: 15px;
+    border: 0px solid #9767F5;
 
     font-family: Poppins;
     font-style: normal;

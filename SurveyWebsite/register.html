@@ -17,15 +17,36 @@
 <body>
 
     <div class="register" id="register">
-        <h1>Register:</h1>
-        <input type="text" id="username" placeholder="Username"><br>
-        <input type="text" id="email" placeholder="Email"><br>
-        <input type="text" id="confirmEmail" placeholder="Confirm Email"><br>
-        <input type="password" id="password" placeholder="Password"><br>
-        <input type="password" id="confirmPassword" placeholder="Confirm Password"><br>
+        <img src="../src/resources/viewie.png" class="logo">
+        <img src="../src/resources/person.png" class="person">
+        <img src="../src/resources/confetti2.png" class="confetti">
+        <img src="../src/resources/white.png" class="white">
+        <span class="alreadyHaveAccount">Already have an account? <a href="login.html">Login</a></span>
+        <span class="joinUs">Join us and Start for Free</span>
+        <span class="registerText">Register</span>
+        <span class="usernameText">Username</span>
+        <input type="text" id="username" class="usernameInput">
+        <span class="emailText">Email</span>
+        <input type="text" id="email" class="emailInput">
+        <span class="confirmEmailText">Confirm Email</span>
+        <input type="text" id="confirmEmail" class="confirmEmailInput">
+        <span class="passwordText">Password</span>
+        <input type="password" id="password" class="passwordInput">
+        <span class="confirmPasswordText">Confirm Password</span>
+        <input type="password" id="confirmPassword" class="confirmPasswordInput">
+
         <p style="color:red" id="errorMessage"></p>
-        <button onclick="register()">Create Account</button> or <button onclick="googleLogin()">Sign in with google</button>
-        <p>Already have an account? <a href="login.html">Login</a></p>
+        <button class="registerBtn" onclick="register()">Create Account</button>
+
+        <div class="or">
+            <img src="../src/resources/lines.png" class="lines">
+            <span class="orText">or</span>
+        </div>
+
+        <div class="googleBtn" onclick="googleLogin()">
+            <img src="../src/resources/google.png" class="googleLogo">
+            <span class="googleText">Sign in with google</span>
+        </div>
     </div>
 
 <script src="fireBase.js"></script>
