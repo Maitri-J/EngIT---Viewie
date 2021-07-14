@@ -4,6 +4,8 @@ import Signup from '../components/Signup'
 import Home from '../components/Home';
 import Login from '../components/Login';
 import ForgetPassword from '../components/ForgetPassword';
+import Dashboard from '../components/Dashboard';
+import UploadSurvey from '../components/UploadSurvey';
 
 import {
     Switch,
@@ -16,18 +18,17 @@ const Providers = () => {
         <AuthProviders>
             {/* Providing routing to other pages */}
             <Switch>
-                <Route exact path="/">
-                    <Home />
-                </Route>
-                <Route path="/signup">
-                    <Signup />
-                </Route>
-                <Route path="/login">
-                    <Login />
-                </Route>
-                <Route path="/resetpassword">
-                    <ForgetPassword />
-                </Route>
+                <Route exact path="/" component={Home} />
+
+                <Route path="/signup" component={Signup} />
+
+                <Route path="/login" component={Login} />
+
+                <Route path="/resetpassword" component={ForgetPassword} />
+            
+                <Route path="/dashboard" component={Dashboard} />
+
+                <Route path="/uploadsurvey" component={UploadSurvey} />
             </Switch>
         </AuthProviders>
     )

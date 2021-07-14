@@ -11,21 +11,20 @@ const FBaseAuth = FBase.auth();
 const FBaseDB = firebase.database();
 
 // surveyInfo - information about the form, publisherID - UID for user in db
-const addSurvey = (surveyInfo, publisherID) => {
+const addSurvey = (surveyInfo, userID) => {
     const surveysRef = FBaseDB.ref("surveys");
     const newSurveyRef = surveysRef.push();
 
     newSurveyRef.set({
         title: surveyInfo.title,
-        publisherId: publisherID,
+        publisherId: userID,
         desc: surveyInfo.desc,
         link: surveyInfo.link,
-        creditReward: surveyInfo.creditReward,
         creditBoost: surveyInfo.creditBoost,
-        duration: surveyInfo.duration,
+        length: surveyInfo.length,
         maxParticipants: surveyInfo.maxParticipants,
         tags: surveyInfo.tags
     });
 }
 
-export { FBase, FBaseAuth, addSurvey, firebase };
+export { FBase, FBaseAuth, FBaseDB, addSurvey, firebase };

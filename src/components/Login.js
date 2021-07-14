@@ -2,7 +2,7 @@ import {React, useRef, useState, } from 'react'
 import { useAuthContext } from '../context/AuthProviders'
 import { FBaseAuth } from '../tools/Firebase'
 
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 const Login = () => {
     // similar to useState but value is held after re-render
@@ -38,6 +38,7 @@ const Login = () => {
           } 
           else {
             setMessage("Please verify your email");
+            setUser(null);
             logout();
           }
           // ...
@@ -83,6 +84,9 @@ const Login = () => {
                 
 
                 <p>Need an account? <Link to="/signup">Sign Up</Link></p>
+                <Link to="/">Home</Link>
+
+                {currentUser && <Redirect to="/dashboard"/>}
             </form>
         </div>
     )

@@ -85,6 +85,7 @@ const AuthProviders = ({ children }) => {
 
     const logout = () => {
       // API Call to Firebase => Logout
+      setUser(null);
       return FBaseAuth.signOut();
     }
 
