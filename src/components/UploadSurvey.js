@@ -19,6 +19,7 @@ const UploadSurvey = () => {
     const SubmitForm = (e) => {
         e.preventDefault();
 
+        // if not logged in and trying to submit a survey
         if(!currentUser){
             setMessage("Please sign in before uploading a survey");
             return;
@@ -36,7 +37,9 @@ const UploadSurvey = () => {
             tags: []
         }
 
-        addSurvey(surveyInfo, currentUser.uid);
+        // console.log(JSON.stringify(currentUser));
+
+        addSurvey(surveyInfo, currentUser.email);
 
         setMessage("Survey has been successfully uploaded");
     }

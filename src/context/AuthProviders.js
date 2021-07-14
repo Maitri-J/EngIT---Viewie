@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect, useContext } from 'react'
-import { FBase, FBaseAuth, firebase } from '../tools/Firebase';
+import { FBase, FBaseAuth, firebase, addNewUsertoFBaseDB, FBaseDB } from '../tools/Firebase';
 
 const AuthContext = createContext();
 
@@ -65,10 +65,24 @@ const AuthProviders = ({ children }) => {
         var credential = result.credential;
     
         // This gives you a Google Access Token. You can use it to access the Google API.
-        var token = credential.accessToken;
+        // var token = credential.accessToken;
+
         // The signed-in user info.
         setUser(result.user);
-        // ...
+
+        // console.log(JSON.stringify(result.user));
+        
+        // If user has never logged in using Gooogle => make new users entry for user
+        const getUserRef = FBaseDB.ref(`users/${result.user.uid}`)
+        getUserRef.on('value', (snapshot) => {
+          const data = snapshot.val();
+          
+          console.log(data);
+          if(!data){
+             addNewUsertoFBaseDB(result.user, result.user.displayName);
+          }
+        });
+        
 
       }).catch((error) => {
         // Handle Errors here.
