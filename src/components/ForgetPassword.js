@@ -35,26 +35,26 @@ const ForgetPassword = () => {
     }
 
     return (
-        <div class="forgotPassword" id="forgotPassword">
+        <div class="forgotPasswordDiv">
             
-            <img src={viewielogo} class="logo" alt="viewielogo" />
-            <span class="resetPassword">Reset Password</span>
-            <span class="textDescription">Enter your email address and we’ll send you a link to reset your password</span>
-            <span class="textExample">e.g. youremail@gmail.com</span>
+            <img src="images/viewie.png" className="logoForgot" alt="viewielogo" />
+            <span className="resetPasswordForgot">Reset Password</span>
+            <span className="textDescriptionForgot">Enter your email address & we’ll send you a link to reset your password</span>
+            <span className="textExampleForgot">e.g. youremail@gmail.com</span>
 
             <form onSubmit={submitForm}>
-                {!message && <p>{message}</p>}
+                {message != null && <span className="messageForgot">{message}</span>}
 
-                <input class="emailInput" type="text" id="email" ref={resetEmailRef} /><br />
+                <input class="emailInputForgot" type="text" ref={resetEmailRef} />
 
                 {/* <span style={{color: 'black'}} id="message" class="message"></span> */}
-                <button class="send" type="submit" >Send</button>
+                <button class="sendForgot" type="submit" >Send</button>
             </form>
                 
 
-            <Link to="/login"><p class="back">Back</p></Link>
+            <Link to="/login"><span class="backForgot">Back</span></Link>
 
-            <span class="notAMember">Not a member? <Link to="/signup">Register Now</Link></span>
+            <span class="notAMemberForgot">Not a member? <Link to="/signup">Register Now</Link></span>
         </div>
     )
 }
