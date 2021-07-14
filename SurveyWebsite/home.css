@@ -1,20 +1,20 @@
 
 body{
     position: relative;
-    width: 1920px;
-    height: 5306px;
-    margin: 0;
-    background: #FEFEFE;
+width: 1920px;
+height: 5306px;
+margin: 0;
+background: #FEFEFE;
 }
 
 /* navigation */
 .topnav{
     position: absolute;
-    width: 1890px;
-    height: 176.46px;
-    left: -22px;
-    top: -9px;
-    z-index: 1;
+width: 1890px;
+height: 176.46px;
+left: -22px;
+top: -9px;
+z-index: 1;
 
 }
 
