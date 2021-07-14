@@ -1,6 +1,6 @@
 import {React, useRef, useState, } from 'react'
 import { useAuthContext } from '../context/AuthProviders'
-import '../stylesheets/login.css';
+import '../stylesheets/all.css';
 import logo from '../resources/viewie.png'
 import { FBaseAuth } from '../tools/Firebase'
 
@@ -54,14 +54,14 @@ const Login = () => {
     }
 
     return (
-        <div class="login" id="login">
+        <div className="login" id="login">
 
-            <img src="images/viewie.png" class="logo"/>
-            <img src="images/abstract.png" class="abstract"/>
-            <img src="images/confetti.png" class="confetti"/>
-            <img src="images/white.png" class="white"/>
-            <span class="accessContent">Login to Access more content.</span>
-            <span class="loginText">Login</span>
+            <img src="images/viewie.png" className="logo"/>
+            <img src="images/abstract.png" className="abstract"/>
+            <img src="images/confetti.png" className="confetti"/>
+            <img src="images/white.png" className="white"/>
+            <span className="accessContent">Login to Access more content.</span>
+            <span className="loginText">Login</span>
             
             <form onSubmit={submitForm}>
               
@@ -76,31 +76,31 @@ const Login = () => {
                 <input type="text" id="username" ref={userNameRef} /><br />
                 */}
 
-                <label class="emailText">Email address</label>
-                <input class="emailInput" type="text" id="email" ref={emailRef} /><br />
+                <label className="emailText">Email address</label>
+                <input className="emailInput" type="text" id="email" ref={emailRef} />
 
-                <label class="passwordText">Password</label>
-                <input class="passwordInput" type="password" id="password" ref={passwordRef} /><br />
+                <label className="passwordText">Password</label>
+                <input className="passwordInput" type="password" id="password" ref={passwordRef} />
 
                 {/* <span style="color:red" id="errorMessage" class="errorMessage"></span> */}
 
-                <span class="forgotPassword"><Link to="/resetpassword">Forget your password?</Link></span>
+                <span className="forgotPassword"><Link to="/resetpassword">Forget your password?</Link></span>
 
-                <button class="loginBtn" type="submit">Login</button>    
-                <div class="or">
-                  <img src="images/lines.png" class="lines"/>
-                  <span class="orText">or</span>
+                <button className="loginBtn" type="submit">Login</button>    
+                <div className="or">
+                  <img src="images/lines.png" className="lines"/>
+                  <span className="orText">or</span>
                 </div>
 
                 {/* Need to create google login */}
 
-                <div class="googleBtn" onClick={googleLogin}>
-                  <img src="images/google.png" class="googleLogo"/>
-                  <span class="googleText">Sign in with google</span>
+                <div className="googleBtn" onClick={googleLogin}>
+                  <img src="images/google.png" className="googleLogo"/>
+                  <span className="googleText">Sign in with google</span>
                 </div>
                 
 
-                <span class="noAccount">Don't have an account? <Link to="/signup">Register Now</Link></span>
+                <span className="noAccount">Don't have an account? <Link to="/signup">Register Now</Link></span>
                 <Link to="/">
                   <img src="images/cross.png" class="cross"/>
                 </Link>

@@ -9,6 +9,7 @@ const Signup = () => {
     // similar to useState but value is held after re-render
     const userNameRef = useRef()
     const emailRef = useRef()
+    const emailConfirmRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
     
@@ -27,8 +28,14 @@ const Signup = () => {
 
         // Checks to ensure password typed are the same 
         if(passwordConfirmRef.current.value !== passwordRef.current.value){
-            setMessage("Error: Passwords entered do not match");
-            return;
+          setMessage("Passwords entered do not match");
+          return;
+        }
+
+        // Checks to ensure password typed are the same 
+        if(emailConfirmRef.current.value !== emailRef.current.value){
+          setMessage("Emails entered do not match");
+          return;
         }
         
         setLoading(true);
@@ -58,39 +65,57 @@ const Signup = () => {
     }
 
     return (
-        <div class="register" id="register">
-            <h1>Register:</h1>
+        <div className="signup">
+            <span className="alreadyHaveAccountReg">Already have an account? <Link to="/login">Login</Link></span>
+            <span className="registerTextReg">Register</span>
+            <img src="images/viewie.png" className="logoReg"/>
+            <img src="images/person.png" className="personReg"/>
+            <img src="images/confetti2.png" className="confettiReg"/>
+            <img src="images/white.png" className="whiteReg"/>
             
             <form onSubmit={submitForm}>
               
                 {/* Return Error/ Success Message */}
                 {message != null &&
-                <p>{message}</p>}
+                <span className="errorMessageReg">{message}</span>}
 
                 {currentUser && JSON.stringify(currentUser)}
 
-                <label>Username: </label>
-                <input type="text" id="username" ref={userNameRef} /><br />
+                <span className="usernameTextReg">Username</span>
+                <input type="text" className="usernameInputReg" id="username" ref={userNameRef} />
 
-                <label>Email: </label>
-                <input type="text" id="email" ref={emailRef} /><br />
+                <span className="emailTextReg">Email</span>
+                <input type="text" className="emailInputReg" id="email" ref={emailRef} />
 
-                <label>Password: </label>
-                <input type="password" id="password" ref={passwordRef} /><br />
-                <input type="password" id="confirmPassword" ref={passwordConfirmRef} /><br />
+                <span className="confirmEmailTextReg">Confirm Email</span>
+                <input type="text" ref={emailConfirmRef} className="confirmEmailInputReg"></input>
+
+                <span className="passwordTextReg">Password</span>
+                <input type="password" ref={passwordRef} className="passwordInputReg" />
+
+                <span className="confirmPasswordTextReg">Confirm Password</span>
+                <input type="password" ref={passwordConfirmRef} className="confirmPasswordInputReg"/>
 
                 {/* <p style="color:red" id="errorMessage"></p> */}
 
                 {!isLoading &&
-                <button type="submit">Create Account</button>     
+                <button className="registerBtnReg" type="submit">Create Account</button>     
                 }
-                or 
+                
+                <div class="orReg">
+                  <img src="images/lines.png" class="linesReg"/>
+                  <span className="orTextReg">or</span>
+                </div>
 
                 {/* Need to create google login */}
-                <button onClick={googleLogin}>Sign in with google</button>
+                <div className="googleBtnReg" onClick={googleLogin}>
+                  <img src="images/google.png" className="googleLogoReg"/>
+                  <span className="googleTextReg">Sign in with google</span>
+                </div>
 
-                <p>Already have an account? <Link to="/login">Login</Link></p>
-                <p><Link to="/">Home</Link></p>
+                <Link to="/">
+                  <img src="images/cross.png" className="cross"/>
+                </Link>
 
             </form>
         </div>
