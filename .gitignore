@@ -19,7 +19,7 @@
 .env.production.local
 
 # google firebase
-google-credentials.json
+# google-credentials.json
 
 npm-debug.log*
 yarn-debug.log*
