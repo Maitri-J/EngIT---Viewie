@@ -14,6 +14,9 @@ const Home = () => {
     return (
         <div>
             Home Page
+
+            <Link to="/uploadsurvey">Create New Survey</Link>
+
             {/* Testing upload survey */}
             {/* <UploadSurvey /> */}
 
@@ -26,14 +29,15 @@ const Home = () => {
                     <Link to="/signup">Sign Up Here</Link>
                     <Link to="/login">Login Here</Link>
                 </div>
+
                 : 
+
                 <div>
                     <Link to="/dashboard">Dashboard</Link>
                     <button onClick={logout}>Logout</button>
                 </div>
             }
-
-            
+       
         </div>
     )
 }

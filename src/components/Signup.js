@@ -1,6 +1,6 @@
 import {React, useRef, useState, } from 'react'
 import { useAuthContext } from '../context/AuthProviders'
-import { FBaseAuth } from '../tools/Firebase'
+import { FBaseAuth, addNewUsertoFBaseDB } from '../tools/Firebase'
 
 import { Link } from 'react-router-dom'
 
@@ -19,7 +19,7 @@ const Signup = () => {
     const [isLoading, setLoading] = useState(false);
 
     // retrieve the signup function given by the Auth Provider
-    const { signup, currentUser, googleLogin, logout } = useAuthContext()
+    const { signup, currentUser, googleLogin, setUser, logout } = useAuthContext()
 
     // runs when the form is submit
     const submitForm = (e) => {
@@ -37,7 +37,13 @@ const Signup = () => {
         signup(emailRef.current.value, passwordRef.current.value)
         .then((userCredential) => {
           // Signed in
+
+          // console.log(`${JSON.stringify(userCredential.user)}`)
+
+          // adds the new user to the database
+          addNewUsertoFBaseDB(userCredential.user, userNameRef.current.value)
           FBaseAuth.currentUser.sendEmailVerification()
+          
           .then(() => {
             // Email verification sent!
             // ...
