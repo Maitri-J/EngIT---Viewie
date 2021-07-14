@@ -1,0 +1,302 @@
+body {
+    background-color:#9767F5;
+}
+
+.logo 
+{
+    position: absolute;
+    width: 212px;
+    height: 159px;
+    left: 18.67px;
+    top: 0px;
+}
+
+.abstract
+{
+    position: absolute;
+    width: 728px;
+    height: 680px;
+    left: 94px;
+    top: 110px;
+}
+
+.confetti
+{
+    position: absolute;
+    width: 960px;
+    height: 1024px;
+    left: 0px;
+    top: 0px;
+}
+
+.accessContent 
+{
+    position: absolute;
+    width: 390.67px;
+    height: 108px;
+    left: 170.67px;
+    top: 790px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 54px;
+
+    color: #FFFFFF;
+}
+
+.loginText 
+{
+    position: absolute;
+    width: 190.67px;
+    height: 72px;
+    left: 1149px;
+    top: 110px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 48px;
+    line-height: 72px;
+    /* identical to box height */
+
+
+    color: #313131;
+}
+
+.noAccount
+{
+    position: absolute;
+    width: 446.67px;
+    height: 27px;
+    left: 1149px;
+    top: 195px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+
+    color: rgba(49, 49, 49, 0.6);
+}
+
+.white
+{
+    position: absolute;
+    width: 960px;
+    height: 1024px;
+    left: 960px;
+    top: 0px;
+
+    background: #FFFFFF;
+}
+
+.loginBtn
+{
+    position: absolute;
+    width: 579.7px;
+    height: 67px;
+    left: 1150.15px;
+    top: 613px;
+
+    background: #9767F5;
+    border-radius: 15px;
+    border: 0px solid #9767F5;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+
+
+    color: #FFFFFF;
+    cursor:pointer;
+}
+
+.googleBtn
+{
+    position: absolute;
+    width: 580.85px;
+    height: 70px;
+    left: 1149px;
+    top: 828px;
+
+    background: #FFFFFF;
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    border-radius: 15px;
+
+    cursor:pointer;
+}
+
+.googleText
+{
+    position: absolute;
+    width: 231px;
+    height: 36px;
+    left: 185.96px;
+    top: 17px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.googleLogo
+{
+    position: absolute;
+    width: 39x;
+    height: 39px;
+    left: 114.79px;
+    top: 16px;
+    z-index: 1;
+}
+
+.emailText 
+{
+    position: absolute;
+    width: 145.79px;
+    height: 33px;
+    left: 1150.15px;
+    top: 294px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: #313131;
+}
+
+.emailInput
+{
+    position: absolute;
+    width: 580.85px;
+    height: 70px;
+    left: 1150.15px;
+    top: 327px;
+
+    background: #FFFFFF;
+    border: 2px solid #CDCDCD;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.passwordText 
+{
+    position: absolute;
+    width: 145.79px;
+    height: 33px;
+    left: 1150.15px;
+    top: 433px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+
+    color: #313131;
+
+}
+
+.passwordInput
+{
+    position: absolute;
+    width: 580.85px;
+    height: 70px;
+    left: 1150.15px;
+    top: 466px;
+
+    background: #FFFFFF;
+    border: 2px solid #CDCDCD;
+    box-sizing: border-box;
+    border-radius: 15px;
+}
+
+.forgotPassword
+{
+    position: absolute;
+    width: 235.33px;
+    height: 27px;
+    left: 1495.67px;
+    top: 547px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.lines
+{
+    position: absolute;
+    width: 579.7px;
+    height: 1px;
+    left: 1150.15px;
+    top: 750px;
+}
+
+.orText
+{
+    position: absolute;
+    width: 21.81px;
+    height: 27px;
+    left: 1430.24px;
+    top: 736px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height */
+
+
+    color: rgba(0, 0, 0, 0.2);
+}
+
+.errorMessage
+{
+    position: absolute;
+    width: 580px;
+    height: 33px;
+    left: 1150px;
+    top: 574px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+
+    color:red
+}
+
+.cross
+{
+    position: absolute;
+    width: 74.67px;
+    height: 55px;
+    left: 1832px;
+    top: 9px;
+    z-index: 1;
+}

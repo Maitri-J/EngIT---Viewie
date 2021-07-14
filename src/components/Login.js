@@ -1,5 +1,7 @@
 import {React, useRef, useState, } from 'react'
 import { useAuthContext } from '../context/AuthProviders'
+import '../stylesheets/login.css';
+import logo from '../resources/viewie.png'
 import { FBaseAuth } from '../tools/Firebase'
 
 import { Link, Redirect } from 'react-router-dom'
@@ -53,38 +55,55 @@ const Login = () => {
 
     return (
         <div class="login" id="login">
-            <h1>Login:</h1>
+
+            <img src="images/viewie.png" class="logo"/>
+            <img src="images/abstract.png" class="abstract"/>
+            <img src="images/confetti.png" class="confetti"/>
+            <img src="images/white.png" class="white"/>
+            <span class="accessContent">Login to Access more content.</span>
+            <span class="loginText">Login</span>
             
             <form onSubmit={submitForm}>
               
                 {/* Return Error/ Success Message */}
                 {message != null &&
-                <p>{message}</p>}
+                <span className="errorMessage">{message}</span>}
 
                 {currentUser && JSON.stringify(currentUser)}
 
+                {/*
                 <label>Username: </label>
                 <input type="text" id="username" ref={userNameRef} /><br />
+                */}
 
-                <label>Email: </label>
-                <input type="text" id="email" ref={emailRef} /><br />
+                <label class="emailText">Email address</label>
+                <input class="emailInput" type="text" id="email" ref={emailRef} /><br />
 
-                <label>Password: </label>
-                <input type="password" id="password" ref={passwordRef} /><br />
+                <label class="passwordText">Password</label>
+                <input class="passwordInput" type="password" id="password" ref={passwordRef} /><br />
 
-                {/* <p style="color:red" id="errorMessage"></p> */}
+                {/* <span style="color:red" id="errorMessage" class="errorMessage"></span> */}
 
-                <Link to="/resetpassword"><p class="forgotPassword">Forget your password?</p></Link>
+                <span class="forgotPassword"><Link to="/resetpassword">Forget your password?</Link></span>
 
-                <button type="submit">Login</button>    
-                or 
+                <button class="loginBtn" type="submit">Login</button>    
+                <div class="or">
+                  <img src="images/lines.png" class="lines"/>
+                  <span class="orText">or</span>
+                </div>
 
                 {/* Need to create google login */}
-                <button onClick={googleLogin}>Sign in with google</button>
+
+                <div class="googleBtn" onClick={googleLogin}>
+                  <img src="images/google.png" class="googleLogo"/>
+                  <span class="googleText">Sign in with google</span>
+                </div>
                 
 
-                <p>Need an account? <Link to="/signup">Sign Up</Link></p>
-                <Link to="/">Home</Link>
+                <span class="noAccount">Don't have an account? <Link to="/signup">Register Now</Link></span>
+                <Link to="/">
+                  <img src="images/cross.png" class="cross"/>
+                </Link>
 
                 {currentUser && <Redirect to="/dashboard"/>}
             </form>
