@@ -1,5 +1,4 @@
-import React from 'react'
-//import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import { FBaseDB } from '../tools/Firebase'
 import SurveyCard from './SurveyCard'
 import { addSurvey } from "../tools/Firebase"
@@ -12,6 +11,35 @@ import TopNav from './Topnav'
 const Home = () => {
 
     const { logout, currentUser } = useAuthContext();
+
+    const [isLoading, setLoading] = useState(true);
+    const [userData, setuserData] = useState({})
+
+    // fetch user profile from firebase => run everytime dashboard is loaded
+    // to ensure accurate information
+    useEffect(() => {
+        if(!currentUser){
+            return;
+        }
+        console.log(JSON.stringify(currentUser));
+
+        
+        // fetch user profile information
+        const userRef = FBaseDB.ref(`users/${currentUser.uid}`);
+        //const surveys = FBaseDB.ref(`surveys/`);
+
+        userRef.on('value', (snapshot) => {
+            const data = snapshot.val();
+            setuserData(data);
+        });
+
+        // fetch current users surveys
+
+        
+        // console.log(userData);
+        setLoading(false);
+
+    }, [currentUser])
 
     return (
         <div>
@@ -34,7 +62,7 @@ const Home = () => {
                 : 
 
                 <div>
-                    <TopNav noCredits={0}/>
+                    <TopNav noCredits={currentUser.noCredits}/>
                     <button onClick={logout}>Logout</button>
                     <div className="loggedInHome">
                         <span className="startText">Start Sharing</span>
