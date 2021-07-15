@@ -7,13 +7,15 @@ import { useAuthContext } from '../context/AuthProviders'
 
 const ShuffleSurvey = () => {
     const surveyData = {
-        title: "nice",
-        length: 10
+        title: "Test Survey",
+        desc: "this is a survey description",
+        length: 10,
+        creditBoost: 20
     }
     
     return (
         <div>
-            <TopNav />
+            <TopNav noCredits={0}/>
             <div className="cardDiv">
                 <SurveyCard surveyInfo={surveyData}/>
             </div>
