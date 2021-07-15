@@ -23,7 +23,6 @@ const Home = () => {
     const [creditBoost, setcreditBoostData] = useState([])
     const [userSurveys, setuserSurveys] = useState([]);
     
-
     // fetch user profile from firebase => run everytime dashboard is loaded
     // to ensure accurate information
     useEffect(() => {
@@ -42,63 +41,63 @@ const Home = () => {
             setuserData(data);
         });
 
-        // // fetch current users surveys
-        // var ref = firebase.database().ref();
+        // fetch current users surveys
+        var ref = firebase.database().ref();
 
-        // ref.on("value", function(snapshot) {
-        //     let data = snapshot.val();
-        //     let surveys = data.surveys;
-        //     var titles = [];
-        //     var descs = [];
-        //     var lengths = [];
-        //     var creditBoosts = [];
+        ref.on("value", function(snapshot) {
+            let data = snapshot.val();
+            let surveys = data.surveys;
+            var titles = [];
+            var descs = [];
+            var lengths = [];
+            var creditBoosts = [];
             
-        //     let keys = Object.keys(surveys);
-        //     console.log(surveys);
-        //     for (let i = 0; i < keys.length; i++){
-        //         let k = keys[i];
-        //         titles.push(surveys[k].title);
-        //         descs.push(surveys[k].desc);
-        //         lengths.push(surveys[k].length);
-        //         creditBoosts.push(surveys[k].creditBoost);
-        //     }
-        //     settitleData(titles);
-        //     setdescData(descs);
-        //     setlengthData(lengths);
-        //     setcreditBoostData(creditBoosts);
-                
-        // }, function (error) {
-        //     console.log("Error: " + error.code);
-        // });
-
-        const surveyRef = FBaseDB.ref('surveys/');
-
-        // fetch survey data
-        surveyRef.on('value', (snapshot) => {
-            const surveyData = snapshot.val();
-
-            console.log(JSON.stringify(surveyData));
-            
-            var res1 = [];
-            for(var i in surveyData){
-                // console.log(i)
-                // console.log(surveyData[i])
-
-                var res2 = [];
-
-                // converts the object to an array
-                res2.push(surveyData[i]);
-                // console.log(res2);
-
-                // push the array into the final array
-                res1.push(res2);
+            let keys = Object.keys(surveys);
+            console.log(surveys);
+            for (let i = 0; i < keys.length; i++){
+                let k = keys[i];
+                titles.push(surveys[k].title);
+                descs.push(surveys[k].desc);
+                lengths.push(surveys[k].length);
+                creditBoosts.push(surveys[k].creditBoost);
             }
-            // now in json format
-            console.log(res1);
-
-            console.log(`JSON TEST: ${JSON.stringify(res1)}`);
-            setuserSurveys(res1);
+            settitleData(titles);
+            setdescData(descs);
+            setlengthData(lengths);
+            setcreditBoostData(creditBoosts);
+                
+        }, function (error) {
+            console.log("Error: " + error.code);
         });
+
+        // const surveyRef = FBaseDB.ref('surveys/');
+
+        // // fetch survey data => dynamic rendering
+        // surveyRef.on('value', (snapshot) => {
+        //     const surveyData = snapshot.val();
+
+        //     console.log(JSON.stringify(surveyData));
+            
+        //     var res1 = [];
+        //     for(var i in surveyData){
+        //         // console.log(i)
+        //         // console.log(surveyData[i])
+
+        //         var res2 = [];
+
+        //         // converts the object to an array
+        //         res2.push(surveyData[i]);
+        //         // console.log(res2);
+
+        //         // push the array into the final array
+        //         res1.push(res2);
+        //     }
+        //     // now in json format
+        //     console.log(res1);
+
+        //     console.log(`JSON TEST: ${JSON.stringify(res1)}`);
+        //     setuserSurveys(res1);
+        // });
 
         // console.log(userData);
         setLoading(false);
@@ -140,16 +139,16 @@ const Home = () => {
                     <span className="helpText">Help complete surveys without logging in</span>
                     <div className="surveys">
 
-                        {
+                        {/* {
                             userSurveys.map((surv) => 
                                 <div key={surv.surveyUID}>
                                     <SurveyCard surveyInfo={surv[0]} />
                                 </div>
                                 
                             )
-                        }
+                        } */}
 
-                        {/* <div className="oneOne">
+                        <div className="oneOne">
                         <SurveyCard title={title[0]} desc={desc[0]} length={length[0]} creditBoost={creditBoost[0]}/>
                         </div>
                         <div className="oneTwo">
@@ -201,8 +200,8 @@ const Home = () => {
                         <SurveyCard title={title[16]} desc={desc[16]} length={length[16]} creditBoost={creditBoost[16]}/>
                         </div>
                         <div className="sixThree">
-                        <SurveyCard title={title[17]} desc={desc[17]} length={length[17]} creditBoost={creditBoost[17]}/> */}
-                        {/* </div> */}
+                        <SurveyCard title={title[17]} desc={desc[17]} length={length[17]} creditBoost={creditBoost[17]}/>
+                        </div>
                     </div>
                 </div>
             }
