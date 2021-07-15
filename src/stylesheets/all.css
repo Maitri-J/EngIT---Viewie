@@ -949,7 +949,8 @@
     left: 0px;
     top: 0px;
 
-    background: #DAF3F9;
+    background: #DAF3F9; 
+
     border-radius: 30px;
 }
 
@@ -1260,6 +1261,7 @@
     color: #9868F5;
 }
 
+
 /* ###################### upload Survey page ###################### */
 .upload-title {
     position: absolute;
@@ -1552,3 +1554,125 @@ input {
     cursor: pointer;
 }
 
+.surveys
+{
+    position: absolute;
+    width: 1514px;
+    height: 1897.65px;
+    left: 203px;
+    top: 1547px;
+}
+
+.oneOne
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.oneTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 0px;
+}
+.oneThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 0px;
+}
+.twoOne
+{
+    position: absolute;
+    left: 0px;
+    top: 324.61px;
+}
+.twoTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 324.61px;
+}
+.twoThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 324.61px;
+}
+
+.threeOne
+{
+    position: absolute;
+    left: 0px;
+    top: 649.22px;
+}
+.threeTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 649.22px;
+}
+.threeThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 649.22px;
+}
+
+.fourOne
+{
+    position: absolute;
+    left: 0px;
+    top: 973.83px;
+
+}
+.fourTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 973.83px;
+}
+.fourThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 973.83px;
+}
+
+.fiveOne
+{
+    position: absolute;
+    left: 0px;
+    top: 1298.44px;
+}
+.fiveTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 1298.44px;
+}
+.fiveThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 1298.44px;
+}
+
+.sixOne
+{
+    position: absolute;
+    left: 0px;
+    top: 1623.05px;
+}
+.sixTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 1623.05px;
+}
+.sixThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 1623.05px;
+}
