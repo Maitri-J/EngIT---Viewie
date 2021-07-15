@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="uploadSurvey.css" />
+    <link rel="stylesheet" type="text/css" href="shuffleSurvey.css" />
 </head>
 <body>
     <!-- Top Bar -->
@@ -70,60 +70,48 @@
         </div>
     </div>
 
-    <!-- Page content -->
-    <div class="upload-title">
-        <p>Letâ€™s upload your survey</p>
-    </div>
+    <div class="survey-block">
+        <div class="wrapper">
+            <survey-box></survey-box>
+            <div class="surveyTitle">
+                <p>Title goes here</p>
+            </div>
+            <div class="surveyText">
+                <p>“description or comment about the survey...”</p>
+            </div>
+            <div class="surveyStatus">
+                <div class="credit">
+                    <span id="creditText">credit: ... </span>
+                </div>
+                <div class="duration">
+                    <img id="clock-img " src="../src/resources/clock_img.png" alt="Estimated time">
+                    <span id="timeText">... min</span>
+                </div>
+                <div class="maxParticipants">
+                    <img id="people-img " src="../src/resources/people_img.png" alt="Survey done">
+                    <p>...</p>
+                </div>
+            </div>
+            <div class="tagDescription">
+                <!-- implement tags -->
+            </div>
+            <div class="interactive">
+                <img src="../src/resources/thumbs_up.png" alt="Thumbs up">
+                <img src="../src/resources/thumbs_up.png" alt="Thumbs down">
+                <img src="../src/resources/comments.png" alt="Comments">
+            </div>
 
-    <!-- Left hand survey input -->
-    <div class="left-survey">
-        <div class="survey-link">
-            <span class="surveyLink">Survey Linknn<br /></span>
-            <input class="surveyLinkInput" type="text" id="survey-link">
-        </div>
-        <div class="estimated-time">
-            <label for="duration">Estimated time to finish this survey:<br /></label>
-            <select id="durationInput"></select> <!-- Update later for customization -->
-        </div>
-        <div class="maxParticipants">
-            <span class="participants">How many participants do you need for your project? <br /></span>
-            <input class="participantsInput" type="text" id="survey-link">
-        </div>
-        <div class="boost">
-            <p>Would you like to boost your survey?</p>
-            <!-- update button, record input and toggle-->
-            <button class="noBoostBtn">Nah, I'm good for now </button>
-            <br />
-            <button class="yesBoostBtn">Hells yeah </button>
-        </div>
-
-    </div>
-
-    <!-- Right hand survey input -->
-    <div class="right-survey">
-        <div class="survey-name">
-            <span class="surveyName">Survey Name<br /></span>
-            <input class="surveyNameInput" type="text" id="name">
-        </div>
-        <div class="survey-description">
-            <span class="surveyDescription">Description<br /></span>
-            <input class="surveyDescriptionInput" type="text" id="description">
-        </div>
-        <div class="survey-tags">
-            <span class="surveyTag">Tags<br /></span>
-            <input class="surveyTagInput" type="text" id="tag">
         </div>
     </div>
 
     <!-- Buttons -->
     <div class="lower-button">
         <!-- update button, upload survey and toggle-->
-        <button class="cancelBtn" onclick="goBack()"> Cancel </button> <!-- X work -->
-        <button class="uploadBtn"> Upload </button>
+        <button class="skipBtn" onclick="shuffle()"> Skip </button> <!-- X work -->
+        <button class="doItBtn"> Do it </button>
     </div>
 
-
     <script src="fireBase.js"></script>
-    <script src="uploadSurvey.js"></script>
+    <script src="shuffleSurvey.js"></script>
 </body>
 </html>
