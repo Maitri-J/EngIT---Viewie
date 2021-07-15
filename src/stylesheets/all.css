@@ -881,7 +881,7 @@
     left: 241.33px;
     top: 97.33px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -899,7 +899,7 @@
     left: 401.33px;
     top: 97.33px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -980,7 +980,7 @@
     left: 33.15px;
     top: 73.15px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -1108,7 +1108,7 @@
     left: 1474.67px;
     top: 104px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -1279,6 +1279,14 @@
     color: #C5AEF9;
     font-size: 24px;
   }
+  
+input {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 116.66%;
+    /* or 23px */
+}
 .left-survey {
     font-family: 'Open Sans', sans-serif;
     font-style: normal;
@@ -1351,19 +1359,10 @@
     top: 612px;
 }
 
-#boostInput{
-    position: absolute;
-    width: 259px;
-    height: 45px;
-    left: 133px;
-    top: 657px;
-    background: #FFFFFF;
-    border: 3px solid #7343F2;
-    box-sizing: border-box;
-    border-radius: 100px;
-}
+
 
 .noBoostBtn {
+    position: absolute;
     width: 259px;
     height: 45px;
     left: 133px;
@@ -1386,7 +1385,8 @@
     position: absolute;
     width: 132px;
     height: 45px;
-    top: 120px;
+    left: 133px;
+    top: 712px;
     background: #FFFFFF;
     border: 1px solid #7343F2;
     box-sizing: border-box;
