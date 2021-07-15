@@ -130,25 +130,26 @@ const Dashboard = () => {
             
 
                 <div>
+                    <span className="yourSurveys">Your Surveys</span>
+                    <img src="images/edit.png" className="editBtn"/>
+                    <img src="images/ProfileSearch.png" className="profileSearch"/>
+                    <img src="images/editProfile.png" className="editProfile"/>
                     <Link to="/uploadsurvey">Create New Survey</Link> + 
                     <Link to="/shufflesurvey">Shuffle</Link>
                 </div>
 
-                <div className="surveys">
-                    <div className="oneOne">
+                <div className="mySurveys">
+                    <div className="dashboardOne">
                     <SurveyCard title={title[0]} desc={desc[0]} length={length[0]} creditBoost={creditBoost[0]}/>
                     </div>
-                    <div className="oneTwo">
+                    <div className="dashboardTwo">
                     <SurveyCard title={title[1]} desc={desc[1]} length={length[1]} creditBoost={creditBoost[1]}/>
                     </div>
-                    <div className="oneThree">
+                    <div className="dashboardThree">
                     <SurveyCard title={title[2]} desc={desc[2]} length={length[2]} creditBoost={creditBoost[2]}/>
                     </div>
-                    <div className="twoOne">
+                    <div className="dashboardFour">
                     <SurveyCard title={title[3]} desc={desc[3]} length={length[3]} creditBoost={creditBoost[3]}/>
-                    </div>
-                    <div className="twoTwo">
-                    <SurveyCard title={title[4]} desc={desc[4]} length={length[4]} creditBoost={creditBoost[4]}/>
                     </div>
                 </div>
             </div>)

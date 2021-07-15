@@ -10,8 +10,8 @@ const Complete = () => {
     return (
         <div>
             <TopNav noCredits={0}/>
-            <div className="survey">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSejd99Ca9klqZYVNP0WLEJJJ024jRqQRDX_Lf5erHR4FFWGeg/viewform?embedded=true" width="640" height="615" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <div className="googleSurvey">
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSejd99Ca9klqZYVNP0WLEJJJ024jRqQRDX_Lf5erHR4FFWGeg/viewform?embedded=true" width="640" height="615" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
         </div>
     )
