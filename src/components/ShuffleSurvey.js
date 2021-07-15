@@ -7,7 +7,8 @@ import { useAuthContext } from '../context/AuthProviders'
 
 const ShuffleSurvey = () => {
     const surveyData = {
-        title: "nice"
+        title: "nice",
+        length: 10
     }
     
     return (

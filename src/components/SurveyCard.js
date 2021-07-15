@@ -3,15 +3,15 @@ import React from 'react'
 const SurveyCard = ({ surveyInfo }) => {
     return (
         <div className="surveyBox">
-                <span className="cardTitle">{surveyInfo.title}</span>
-                <span className="cardDesc">this is a description for a survey card</span>
-                <span className="cardCredit">Credit: 100</span>
-                <span className="cardTime">20 min</span>
-                <span className="cardPeopleText">200</span>
-                <img src="images/tags.png" className="cardTags"/>
-                <img src="images/likes.png" className="cardLikes"/>
-                <img src="images/people.png" className="cardPeople"/>
-                <img src="images/clock.png" className="cardClock"/>
+            <span className="cardTitle">{surveyInfo.title}</span>
+            <span className="cardDesc">{surveyInfo.desc}</span>
+            <span className="cardCredit">Credit: {(surveyInfo.length)*10}</span>
+            <span className="cardTime">{surveyInfo.length} min</span>
+            <span className="cardPeopleText">{surveyInfo.creditBoost}</span>
+            <img src="images/tags.png" className="cardTags"/>
+            <img src="images/likes.png" className="cardLikes"/>
+            <img src="images/people.png" className="cardPeople"/>
+            <img src="images/clock.png" className="cardClock"/>
         </div>
         /*
         <div style={styles}>
