@@ -1096,3 +1096,163 @@
     left: 208.24px;
     top: 1400px;
 }
+
+.balanceTop
+{
+    position: absolute;
+    width: 132px;
+    height: 40px;
+    left: 1474.67px;
+    top: 104px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.loggedInHome
+{
+    position: absolute;
+    width: 1920px;
+    height: 1260px;
+    left: 0px;
+    top: -59px;
+    z-index: -2;
+
+    background: linear-gradient(290.51deg, #7242F2 3.54%, #9969F5 91.26%);
+    border-radius: 50px;
+}
+
+.startText
+{
+    position: absolute;
+    width: 781px;
+    height: 83px;
+    left: 124px;
+    top: 348px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 128.5%;
+    /* identical to box height, or 82px */
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.surveysText
+{
+    position: absolute;
+    width: 781px;
+    height: 85px;
+    left: 124px;
+    top: 533px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 128.5%;
+    /* or 93px */
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.homeDescText
+{
+    position: absolute;
+    width: 884px;
+    height: 196.03px;
+    left: 192px;
+    top: 666.72px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 49px;
+
+    color: #FFFFFF;
+}
+
+.arrow
+{
+    position: absolute;
+    width: 97.33px;
+    height: 95.44px;
+    left: 916px;
+    top: 1094.92px;
+}
+
+.dogPerson
+{
+    position: absolute;
+    width: 712px;
+    height: 794.32px;
+    left: 1084px;
+    top: 308.88px;
+}
+
+.searchBar
+{
+    position: absolute;
+    width: 989.33px;
+    height: 80px;
+    left: 239px;
+    top: 1276px;
+}
+
+.homeShuffleBtn
+{
+    position: absolute;
+    width: 233.33px;
+    height: 80px;
+    left: 1446px;
+    top: 1280px;
+
+    background: #7242F2;
+    box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 17px;
+
+    font-family: open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 33px;
+    padding: 22px;
+    text-align: center;
+    text-decoration: none;
+
+    box-sizing: border-box;
+
+    color: #FFFFFF;
+}
+
+.helpText
+{
+    position: absolute;
+    width: 829px;
+    height: 53px;
+    left: 538px;
+    top: 1436px;
+
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 116.66%;
+    /* or 42px */
+
+    text-align: center;
+
+    color: #9868F5;
+}

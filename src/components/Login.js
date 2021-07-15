@@ -105,7 +105,7 @@ const Login = () => {
                   <img src="images/cross.png" class="cross"/>
                 </Link>
 
-                {currentUser && <Redirect to="/dashboard"/>}
+                {currentUser && <Redirect to="/"/>}
             </form>
         </div>
     )
