@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 // const SurveyCard = ({ title, desc, length, creditBoost }) => {
 //     return (
@@ -21,6 +22,7 @@ const SurveyCard = ({ surveyInfo }) => {
         console.log(surveyInfo.creditBoost);
 
         return (
+            <Link to="/complete">
             <div className="surveyBox">
                 <span className="cardTitle">{surveyInfo.title}</span>
                 <span className="cardDesc">{surveyInfo.desc}</span>
@@ -32,6 +34,7 @@ const SurveyCard = ({ surveyInfo }) => {
                 <img src="images/people.png" className="cardPeople"/>
                 <img src="images/clock.png" className="cardClock"/>
             </div>
+            </Link>
         )
     }
 

@@ -7,6 +7,7 @@ import ForgetPassword from '../components/ForgetPassword';
 import Dashboard from '../components/Dashboard';
 import UploadSurvey from '../components/UploadSurvey';
 import ShuffleSurvey from '../components/ShuffleSurvey';
+import Complete from '../components/Complete';
 
 import {
     Switch,
@@ -32,6 +33,8 @@ const Providers = () => {
                 <Route path="/uploadsurvey" component={UploadSurvey} />
 
                 <Route path="/shufflesurvey" component={ShuffleSurvey} />
+
+                <Route path="/complete" component={Complete} />
             </Switch>
         </AuthProviders>
     )
