@@ -999,7 +999,7 @@
     left: 333.74px;
     top: 73.15px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -1020,7 +1020,7 @@
     left: 379.47px;
     top: 102.86px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -1041,7 +1041,7 @@
     left: 379.47px;
     top: 136.02px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
@@ -1095,9 +1095,10 @@
     position: absolute;
     width: 480.06px;
     height: 284.61px;
-    left: 208.24px;
-    top: 1400px;
+    left: 750px;
+    top: 400px;
 }
+
 
 /* ###################### ###################### */
 .balanceTop
@@ -1178,7 +1179,7 @@
     left: 192px;
     top: 666.72px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
@@ -1226,7 +1227,7 @@
     box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 17px;
 
-    font-family: open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;

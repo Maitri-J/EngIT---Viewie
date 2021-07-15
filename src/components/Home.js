@@ -135,7 +135,7 @@ const Home = () => {
                         <img src="images/dogPerson.png" className="dogPerson"/>
                     </div>
                     <img src="images/searchBar.png" className="searchBar"/>
-                    <Link to="/shufflesurvey"><span className="homeShuffleBtn">Shuffle</span></Link>
+                    <Link to="/ShuffleSurvey"><span className="homeShuffleBtn">Shuffle</span></Link>
                     <span className="helpText">Get Credits From Helping Others by Completing Survey</span>
                     <div className="surveys">
 

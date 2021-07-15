@@ -9,7 +9,7 @@ const TopNav = ({ noCredits }) => {
             <img src="images/logoTop.png" className="logoTop" alt="Logo"/>
             <Link to="/"><span className="homeBtn">Home</span></Link>
             <Link to="/shufflesurvey"><span className="aboutBtn">Shuffle</span></Link>
-            <Link to="/uploadsurvey"><img src="images/add.png" className="addBtn"/></Link>
+            <Link to="/UploadSurvey"><img src="images/add.png" className="addBtn"/></Link>
             <img src="images/bell.png" className="bellBtn" alt="Bell button"/>
             <span className="balanceTop">Balance: {noCredits} </span>
             <Link to="/dashboard"><img src="images/profile.png" className="profileBtn" alt="profile picture"/></Link>
