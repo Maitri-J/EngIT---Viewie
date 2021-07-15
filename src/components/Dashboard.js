@@ -8,27 +8,38 @@ const Dashboard = () => {
 
     const [isLoading, setLoading] = useState(true);
     const [userData, setuserData] = useState({})
+    const [userSurveys, setuserSurveys] = useState([]);
 
     // fetch user profile from firebase => run everytime dashboard is loaded
     // to ensure accurate information
     useEffect(() => {
+        if(!currentUser){
+            return;
+        }
+
         console.log(JSON.stringify(currentUser));
 
         // fetch user profile information
         const userRef = FBaseDB.ref(`users/${currentUser.uid}`);
-
+    
         userRef.on('value', (snapshot) => {
             const data = snapshot.val();
             setuserData(data);
         });
 
-        // fetch current users surveys
+        const surveyRef = FBaseDB.ref('survey/');
 
+        // fetch survey data
+        surveyRef.on('value', (snapshot) => {
+            const data = snapshot.val();
+            
+            // console.log(data.getKeys());
+        });
         
         // console.log(userData);
         setLoading(false);
 
-    }, [])
+    }, [currentUser])
 
     return (
         <div>
@@ -44,6 +55,11 @@ const Dashboard = () => {
                     <p>Credit Balance: {userData.noCredits}</p>
                 </div> 
             }
+
+            {/* {
+                !isLoading &&
+                
+            } */}
 
 
             User Profile Information + Completed Surveys + Uploaded Surveys Go Here
