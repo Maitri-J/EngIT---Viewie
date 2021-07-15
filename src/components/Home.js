@@ -15,8 +15,6 @@ const Home = () => {
         <div>
             Home Page
 
-            <Link to="/uploadsurvey">Create New Survey</Link>
-
             {/* Testing upload survey */}
             {/* <UploadSurvey /> */}
 
@@ -26,6 +24,7 @@ const Home = () => {
                 (!currentUser) 
                 ? 
                 <div>
+                    <Link to="/login">Create New Survey</Link>
                     <Link to="/signup">Sign Up Here</Link>
                     <Link to="/login">Login Here</Link>
                 </div>
@@ -33,6 +32,7 @@ const Home = () => {
                 : 
 
                 <div>
+                    <Link to="/uploadsurvey">Create New Survey</Link>
                     <Link to="/dashboard">Dashboard</Link>
                     <button onClick={logout}>Logout</button>
                 </div>

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 const UploadSurvey = () => {
     const surveyLinkRef = useRef();
     const durationRef = useRef();
-    const maxParticipantsRef = useRef();
+    // const maxParticipantsRef = useRef();
     const boostRef = useRef();
     const surveyNameRef = useRef();
     const descRef = useRef();
@@ -33,13 +33,13 @@ const UploadSurvey = () => {
             link: surveyLinkRef.current.value,
             creditBoost: boostRef.current.value,
             length: durationRef.current.value,
-            maxParticipants: maxParticipantsRef.current.value,
             tags: []
         }
 
-        // console.log(JSON.stringify(currentUser));
+        console.log(JSON.stringify(currentUser));
+        console.log(JSON.stringify(currentUser.uid));
 
-        addSurvey(surveyInfo, currentUser.email);
+        addSurvey(surveyInfo, currentUser.uid);
 
         setMessage("Survey has been successfully uploaded");
     }
@@ -72,8 +72,8 @@ const UploadSurvey = () => {
                     <label for="hour">How many credit would you like to use to boost survey?</label>
                     <input type="number" id="minutes" min="0" max="500" ref={boostRef} required={true}/>
 
-                    <label for="hour">How many participants do you need for your survey?</label>
-                    <input type="number" id="minutes" min="1" max="1000" ref={maxParticipantsRef} required={true} />
+                    {/* <label for="hour">How many participants do you need for your survey?</label>
+                    <input type="number" id="minutes" min="1" max="1000" ref={maxParticipantsRef} required={true} /> */}
 
                     {/* Would you like to boost your survey? - goes here  */}
                     
