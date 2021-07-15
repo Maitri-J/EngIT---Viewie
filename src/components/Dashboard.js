@@ -25,7 +25,7 @@ const Dashboard = () => {
             return;
         }
 
-        console.log(JSON.stringify(currentUser));
+        // console.log(JSON.stringify(currentUser));
         
         // fetch user data
         const userRef = FBaseDB.ref(`users/${currentUser.uid}`);
@@ -103,7 +103,7 @@ const Dashboard = () => {
             
             
             // {/* Debug function below */}
-            {!isLoading && <p>{JSON.stringify(userData)}</p>}
+            {/* {!isLoading && <p>{JSON.stringify(userData)}</p>} */}
 
             {/* Only render user profile after loading */}
             {/* {
