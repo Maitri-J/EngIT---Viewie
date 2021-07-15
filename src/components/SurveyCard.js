@@ -3,7 +3,7 @@ import React from 'react'
 const SurveyCard = ({ surveyInfo }) => {
     return (
         <div className="surveyBox">
-                <span className="cardTitle">Title</span>
+                <span className="cardTitle">{surveyInfo.title}</span>
                 <span className="cardDesc">this is a description for a survey card</span>
                 <span className="cardCredit">Credit: 100</span>
                 <span className="cardTime">20 min</span>
