@@ -36,6 +36,7 @@ const UploadSurvey = () => {
             title: surveyNameRef.current.value,
             desc: descRef.current.value,
             link: surveyLinkRef.current.value,
+            participant: maxParticipantsRef.current.value,
             creditBoost: boostRef.current.value,
             length: durationRef.current.value,
             tags: []
@@ -52,6 +53,10 @@ const UploadSurvey = () => {
         setTimeout(() => {
             setSubmitted(true);
         }, 3000);
+    }
+
+    const showBoost = () => {
+        setMessage("boost option selected");
     }
 
 
@@ -90,6 +95,11 @@ const UploadSurvey = () => {
 
                         {/* Would you like to boost your survey? - goes here  */}
                         <label className="boost">How many credit would you like to use to boost survey?</label>
+                        <div>
+                            <input type="submit" class="noBoostBtn" value="Nah I'm good for now" onClick={showBoost} />
+                            <input type="submit" class="yesBoostBtn" value="Hells yeah" onClick={showBoost} />
+                            
+                        </div>
                         <input type="number" id="boostInput" min="0" max="500" ref={boostRef} required={true}/>
                     </div>
                     

@@ -6,14 +6,22 @@ import { Link } from 'react-router-dom'
 import UploadSurvey from './UploadSurvey'
 import { useAuthContext } from '../context/AuthProviders'
 import TopNav from './Topnav'
+import firebase from '@firebase/app'
 
 
 const Home = () => {
 
     const { logout, currentUser } = useAuthContext();
 
-    const [isLoading, setLoading] = useState(true);
     const [userData, setuserData] = useState({})
+
+    const [isLoading, setLoading] = useState(true);
+
+    const [title, settitleData] = useState([])
+    const [desc, setdescData] = useState([])
+    const [length, setlengthData] = useState([])
+    const [creditBoost, setcreditBoostData] = useState([])
+    
 
     // fetch user profile from firebase => run everytime dashboard is loaded
     // to ensure accurate information
@@ -34,8 +42,34 @@ const Home = () => {
         });
 
         // fetch current users surveys
+        var ref = firebase.database().ref();
 
-        
+        ref.on("value", function(snapshot) {
+            let data = snapshot.val();
+            let surveys = data.surveys;
+            var titles = [];
+            var descs = [];
+            var lengths = [];
+            var creditBoosts = [];
+            
+            let keys = Object.keys(surveys);
+            console.log(surveys);
+            for (let i = 0; i < keys.length; i++){
+                let k = keys[i];
+                titles.push(surveys[k].title);
+                descs.push(surveys[k].desc);
+                lengths.push(surveys[k].length);
+                creditBoosts.push(surveys[k].creditBoost);
+            }
+            settitleData(titles);
+            setdescData(descs);
+            setlengthData(lengths);
+            setcreditBoostData(creditBoosts);
+                
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
         // console.log(userData);
         setLoading(false);
 
@@ -50,7 +84,7 @@ const Home = () => {
 
             {/* If the user is logged in => offer option to sign out,
             If user is not logged in => offer option to sign in */}
-            {
+            {!isLoading &&
                 (!currentUser) 
                 ? 
                 <div>
@@ -62,7 +96,7 @@ const Home = () => {
                 : 
 
                 <div>
-                    <TopNav noCredits={currentUser.noCredits}/>
+                    <TopNav noCredits={0}/>
                     <button onClick={logout}>Logout</button>
                     <div className="loggedInHome">
                         <span className="startText">Start Sharing</span>
@@ -75,6 +109,24 @@ const Home = () => {
                     <Link to="/shufflesurvey"><span className="homeShuffleBtn">Shuffle</span></Link>
                     <span className="helpText">Help complete surveys without logging in</span>
                     <div className="surveys">
+                        <SurveyCard title={title[0]} desc={desc[0]} length={length[0]} creditBoost={creditBoost[0]}/>
+                        <SurveyCard title={title[1]} desc={desc[1]} length={length[1]} creditBoost={creditBoost[1]}/>
+                        <SurveyCard title={title[2]} desc={desc[2]} length={length[2]} creditBoost={creditBoost[2]}/>
+                        <SurveyCard title={title[3]} desc={desc[3]} length={length[3]} creditBoost={creditBoost[3]}/>
+                        <SurveyCard title={title[4]} desc={desc[4]} length={length[4]} creditBoost={creditBoost[4]}/>
+                        <SurveyCard title={title[5]} desc={desc[5]} length={length[5]} creditBoost={creditBoost[5]}/>
+                        <SurveyCard title={title[6]} desc={desc[6]} length={length[6]} creditBoost={creditBoost[6]}/>
+                        <SurveyCard title={title[7]} desc={desc[7]} length={length[7]} creditBoost={creditBoost[7]}/>
+                        <SurveyCard title={title[8]} desc={desc[8]} length={length[8]} creditBoost={creditBoost[8]}/>
+                        <SurveyCard title={title[9]} desc={desc[9]} length={length[9]} creditBoost={creditBoost[9]}/>
+                        <SurveyCard title={title[10]} desc={desc[10]} length={length[10]} creditBoost={creditBoost[10]}/>
+                        <SurveyCard title={title[11]} desc={desc[11]} length={length[11]} creditBoost={creditBoost[11]}/>
+                        <SurveyCard title={title[12]} desc={desc[12]} length={length[12]} creditBoost={creditBoost[12]}/>
+                        <SurveyCard title={title[13]} desc={desc[13]} length={length[13]} creditBoost={creditBoost[13]}/>
+                        <SurveyCard title={title[14]} desc={desc[14]} length={length[14]} creditBoost={creditBoost[14]}/>
+                        <SurveyCard title={title[15]} desc={desc[15]} length={length[15]} creditBoost={creditBoost[15]}/>
+                        <SurveyCard title={title[16]} desc={desc[16]} length={length[16]} creditBoost={creditBoost[16]}/>
+                        <SurveyCard title={title[17]} desc={desc[17]} length={length[17]} creditBoost={creditBoost[17]}/>
                     </div>
                 </div>
             }
