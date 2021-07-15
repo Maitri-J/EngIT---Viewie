@@ -1,15 +1,19 @@
 import React, { useRef, useState } from 'react'
-import { addSurvey } from '../tools/Firebase'
 import { useAuthContext } from '../context/AuthProviders'
+import { addSurvey } from '../tools/Firebase'
 import { Link, Redirect } from 'react-router-dom'
+import TopNav from './Topnav'
+
+
 
 const UploadSurvey = () => {
     const surveyLinkRef = useRef();
     const durationRef = useRef();
-    // const maxParticipantsRef = useRef();
+    const maxParticipantsRef = useRef();
     const boostRef = useRef();
     const surveyNameRef = useRef();
     const descRef = useRef();
+    const tagRef = useRef();
     // How do we include Tags ref??
     
     const { currentUser } = useAuthContext();
@@ -32,6 +36,7 @@ const UploadSurvey = () => {
             title: surveyNameRef.current.value,
             desc: descRef.current.value,
             link: surveyLinkRef.current.value,
+            participant: maxParticipantsRef.current.value,
             creditBoost: boostRef.current.value,
             length: durationRef.current.value,
             tags: []
@@ -50,50 +55,76 @@ const UploadSurvey = () => {
         }, 3000);
     }
 
+    const showBoost = () => {
+        setMessage("boost option selected");
+    }
+
 
     return (
         <div>
             {/* Prompt user to login if they are attempting to upload survey without account,
             else render upload survey form */}
             {
-            (!currentUser)
-            ? 
+            (!currentUser)? 
                 <div>
                     <p>Please Login</p>
                     <Link to="/login">Login Here</Link>
                 </div>
             :
+            <div className="upload" id="upload">
+                <TopNav noCredits={0}/>
+                <span class="upload-title">Let’s upload your survey</span>
+            
                 <form onSubmit={SubmitForm}>
 
                     {/* Return Error/ Success Message */}
-                    {message != null &&
-                    <p>{message}</p>}
+                    {message != null && <p>{message}</p>}
+                    <div className="left-survey">
+                        <label className="survey-link">Survey Link</label>
+                        <input type="text" id="surveyLinkInput" ref={surveyLinkRef} required={true} 
+                        placeholder="   Put in the link to your google form here..."/><br />
 
-                    <label>Survey Link</label>
-                    <input type="text" id="surveylink" ref={surveyLinkRef} required={true} /><br />
+                        <label className="estimated-time">Estimated time to finish this survey</label>
+                        <input type="number" id="timeInput" min="1" max="120" ref={durationRef} required={true}
+                        placeholder="   minutes" textAlign='center'/><br />
 
-                    <label for="hour">Estimated time to finish this survey</label>
-                    <input type="number" id="minutes" min="1" max="120" ref={durationRef} required={true}/>
+                        {/* max participants 1k for now, can change later*/} 
+                        <label className="max-participants">How many participants do you need for your project?</label>
+                        <input type="number" id="participantsInput" min="1" max="1000" ref={maxParticipantsRef} required={true} 
+                        placeholder="    people" textAlign='center'/><br />
 
-                    <label for="hour">How many credit would you like to use to boost survey?</label>
-                    <input type="number" id="minutes" min="0" max="500" ref={boostRef} required={true}/>
-
-                    {/* <label for="hour">How many participants do you need for your survey?</label>
-                    <input type="number" id="minutes" min="1" max="1000" ref={maxParticipantsRef} required={true} /> */}
-
-                    {/* Would you like to boost your survey? - goes here  */}
+                        {/* Would you like to boost your survey? - goes here  */}
+                        <label className="boost">How many credit would you like to use to boost survey?</label>
+                        <div>
+                            <input type="submit" class="noBoostBtn" value="Nah I'm good for now" onClick={showBoost} />
+                            <input type="submit" class="yesBoostBtn" value="Hells yeah" onClick={showBoost} />
+                            
+                        </div>
+                        <input type="number" id="boostInput" min="0" max="500" ref={boostRef} required={true}/>
+                    </div>
                     
-                    <label>Survey Name</label>
-                    <input type="text" id="surveylink" ref={surveyNameRef} required={true} /><br />
+                    <div className="right-survey">
+                        <label className="survey-name">Survey Name</label>
+                        <input type="text" id="surveyNameInput" ref={surveyNameRef} required={true} 
+                        placeholder="   What is the title of your survey..."/><br />
+
+                        <label className="survey-description">Description</label>
+                        <textarea id="surveyDescriptionInput" rows="10" cols="30" ref={descRef} required={true} 
+                        placeholder="  Write a short sentence describing your survey..."></textarea><br />
+                        
+                        {/* Tags go here */}
+                        <label className="survey-tags">Tags</label>
+                        <input type="text" id="surveyTagInput" ref={tagRef} required={true} 
+                        placeholder="   Click on the tags that fits your survey..."/><br />
+                    </div>
                     
-                    <label>Description</label>
-                    <textarea name="description" rows="10" cols="30" ref={descRef} required={true}></textarea>
-
-                    {/* Tags go here */}
-
-                    <button type="submit">Done</button>     
+                    <div class="lower-button">
+                        <button type="submit" class="cancelBtn" onclick="goBack()"> Cancel </button> 
+                        <button type="submit" class="uploadBtn"> Upload </button>
+                    </div> 
 
                 </form>
+            </div>
             }
 
             {/* Redirect user to dashboard if survey has been submitted */}

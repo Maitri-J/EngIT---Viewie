@@ -850,6 +850,7 @@
     color: #313131;
 }
 
+/* ###################### Top nav stuff ###################### */
 .logoTop
 {
     position: absolute;
@@ -880,7 +881,7 @@
     left: 241.33px;
     top: 97.33px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -898,7 +899,7 @@
     left: 401.33px;
     top: 97.33px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
@@ -939,6 +940,7 @@
     box-sizing: border-box;
 }
 
+/* ###################### Survey block stuff ###################### */
 .surveyBox
 {
     position: absolute;
@@ -978,7 +980,7 @@
     left: 33.15px;
     top: 73.15px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
@@ -1097,6 +1099,7 @@
     top: 1400px;
 }
 
+/* ###################### ###################### */
 .balanceTop
 {
     position: absolute;
@@ -1105,7 +1108,7 @@
     left: 1474.67px;
     top: 104px;
 
-    font-family: Open Sans;
+    font-family: 'Open Sans', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
@@ -1257,16 +1260,275 @@
     color: #9868F5;
 }
 
-.surveys
-{
+
+/* ###################### upload Survey page ###################### */
+.upload-title {
     position: absolute;
-    width: 1514px;
-    height: 1897.65px;
-    left: 203px;
-    top: 1547px;
+    width: 461.33px;
+    height: 44px;
+    left: 729px;
+    top: 211px;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 116.66%;
+    /* or 42px */
+    color: #000000;
+}
+::placeholder {
+    color: #C5AEF9;
+    font-size: 24px;
+  }
+  
+input {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 116.66%;
+    /* or 23px */
+}
+.left-survey {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 116.66%;
+    /* or 23px */
+    color: #000000;
 }
 
-.one{
+.survey-link {
     position: absolute;
-    left: 514.35px;
+    width: 572px;
+    height: 93px;
+    left: 133px;
+    top: 289px;
 }
+#surveyLinkInput {
+    position: absolute;
+    width: 572px;
+    height: 60px;
+    left: 133px;
+    top: 322px;
+    background: #FFFFFF;
+    border: 3px solid #7343F2;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+.estimated-time {
+    position: absolute;
+    width: 572px;
+    height: 85.67px;
+    left: 133.33px;
+    top: 400px;
+}
+#timeInput{
+    position: absolute;
+    width: 132px;
+    height: 45px;
+    left: 133.33px;
+    top: 440.67px;
+    background: #FFFFFF;
+    border: 3px solid #7343F2;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+.max-participants {
+    position: absolute;
+    width: 572px;
+    height: 85px;
+    left: 133px;
+    top: 507px;
+}
+#participantsInput {
+    position: absolute;
+    width: 132px;
+    height: 45px;
+    left: 133.33px;
+    top: 547px;
+    background: #FFFFFF;
+    border: 3px solid #7343F2;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+.boost {
+    position: absolute;
+    width: 572.33px;
+    height: 145px;
+    left: 133px;
+    top: 612px;
+}
+
+
+
+.noBoostBtn {
+    position: absolute;
+    width: 259px;
+    height: 45px;
+    left: 133px;
+    top: 657px;
+    background: #FFFFFF;
+    border: 1px solid #7343F2;
+    box-sizing: border-box;
+    border-radius: 100px;
+ 
+    color: #C5AEF9;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 116.66%;
+    color: #C5AEF9;
+    cursor: pointer;
+}
+.yesBoostBtn {
+    position: absolute;
+    width: 132px;
+    height: 45px;
+    left: 133px;
+    top: 712px;
+    background: #FFFFFF;
+    border: 1px solid #7343F2;
+    box-sizing: border-box;
+    border-radius: 100px;
+    color: #C5AEF9;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 116.66%;
+    color: #C5AEF9;
+    cursor: pointer;
+}
+.uploadBtn {
+    position: absolute;
+    width: 340px;
+    height: 97.33px;
+    left: 1457px;
+    top: 850px;
+    background: #7242F2;
+    border-radius: 17px;
+    border: 0px solid #9767F5;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+.right-survey {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 116.66%;
+    /* or 23px */
+    color: #000000;
+}
+.survey-name {
+    position: absolute;
+    width: 950px;
+    height: 93px;
+    left: 847px;
+    top: 289px;
+}
+#surveyNameInput {
+    position: absolute;
+    width: 950px;
+    height: 60px;
+    left: 847px;
+    top: 322px;
+    background: #FFFFFF;
+    border: 3px solid #7343F2;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+.survey-description {
+    position: absolute;
+    width: 950px;
+    height: 136px;
+    left: 847px;
+    top: 402px;
+}
+#surveyDescriptionInput {
+    position: absolute;
+    width: 950px;
+    height: 101px;
+    left: 847px;
+    top: 437px;
+    background: #FFFFFF;
+    border: 3px solid #7343F2;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 116.66%;
+}
+.survey-tags {
+    position: absolute;
+    width: 950px;
+    height: 82px;
+    left: 847px;
+    top: 560px;
+}
+#surveyTagInput {
+    position: absolute;
+    width: 950px;
+    height: 60px;
+    left: 847px;
+    top: 593px;
+    
+    background: #FFFFFF;
+    border: 3px solid #7343F2;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+
+.lower-button {
+}
+.cancelBtn {
+    position: absolute;
+    width: 340px;
+    height: 97.33px;
+    left: 1092px;
+    top: 850px;
+
+    background: #FFFFFF;
+    border-radius: 17px;
+    border: 0px solid #9767F5;
+
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    text-align: center;
+    color: rgba(114, 66, 242, 0.5);
+    cursor: pointer;
+}
+.uploadBtn {
+    position: absolute;
+    width: 340px;
+    height: 97.33px;
+    left: 1457px;
+    top: 850px;
+
+    background: #7242F2;
+    border-radius: 17px;
+    border: 0px solid #9767F5;
+
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
