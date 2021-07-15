@@ -7,7 +7,7 @@ const Dashboard = () => {
     const { currentUser } = useAuthContext();
 
     const [isLoading, setLoading] = useState(true);
-    const [userProfile, setUserProfile] = useState({})
+    const [userData, setuserData] = useState({})
 
     // fetch user profile from firebase => run everytime dashboard is loaded
     // to ensure accurate information
@@ -19,10 +19,13 @@ const Dashboard = () => {
 
         userRef.on('value', (snapshot) => {
             const data = snapshot.val();
-            setUserProfile(data);
+            setuserData(data);
         });
+
+        // fetch current users surveys
+
         
-        // console.log(userProfile);
+        // console.log(userData);
         setLoading(false);
 
     }, [])
@@ -31,14 +34,14 @@ const Dashboard = () => {
         <div>
             
             {/* Debug function below */}
-            {!isLoading && <p>{JSON.stringify(userProfile)}</p>}
+            {!isLoading && <p>{JSON.stringify(userData)}</p>}
 
             {/* Only render user profile after loading */}
             {!isLoading &&
                 <div>
-                    <p>{userProfile.username}</p>
-                    <p>{userProfile.userEmail}</p>
-                    <p>Credit Balance: {userProfile.noCredits}</p>
+                    <p>{userData.username}</p>
+                    <p>{userData.userEmail}</p>
+                    <p>Credit Balance: {userData.noCredits}</p>
                 </div> 
             }
 
