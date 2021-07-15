@@ -939,34 +939,160 @@
     box-sizing: border-box;
 }
 
-.profileDropBtn
+.surveyBox
 {
-    display: none;
     position: absolute;
-    width: 241px;
-    height: 44px;
-    left: 1608px;
-    top: 205px;
-    padding: 11px 40px;
-    text-decoration: none;
+    width: 480.06px;
+    height: 284.61px;
+    left: 0px;
+    top: 0px;
 
-    background: #A297F8;
-    border: 1px solid #000000;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
+    background: #DAF3F9;
+    border-radius: 30px;
+}
+
+.cardTitle
+{
+    position: absolute;
+    width: 204.6px;
+    height: 32px;
+    left: 33.15px;
+    top: 27.43px;
 
     font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 116.66%;
+    /* or 28px */
+
+
+    color: #371294;
+}
+
+.cardDesc
+{
+    position: absolute;
+    width: 274.32px;
+    height: 80.01px;
+    left: 33.15px;
+    top: 73.15px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 116.66%;
+    /* or 21px */
+
+
+    color: #371294;
+}
+
+.cardCredit
+{
+    position: absolute;
+    width: 122.67px;
+    height: 24px;
+    left: 333.74px;
+    top: 73.15px;
+
+    font-family: Open Sans;
     font-style: normal;
     font-weight: 600;
     font-size: 18px;
     line-height: 116.66%;
     /* or 21px */
 
+    display: flex;
+    align-items: center;
 
-    color: #FFFFFF;
+    color: #371294;
 }
 
-.profileBtn:hover .profileDropBtn {
-    display: block;
-  }
+.cardTime
+{
+    position: absolute;
+    width: 68.58px;
+    height: 27.43px;
+    left: 379.47px;
+    top: 102.86px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 116.66%;
+    /* or 21px */
+
+    display: flex;
+    align-items: center;
+
+    color: #371294;
+}
+
+.cardPeopleText
+{
+    position: absolute;
+    width: 40px;
+    height: 27.43px;
+    left: 379.47px;
+    top: 136.02px;
+
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 116.66%;
+    /* or 21px */
+
+    display: flex;
+    align-items: center;
+
+    color: #371294;
+}
+
+.cardTags
+{
+    position: absolute;
+    width: 235.46px;
+    height: 69.72px;
+    left: 32.02px;
+    top: 181.73px;
+}
+
+.cardLikes
+{
+    position: absolute;
+    width: 121.16px;
+    height: 27.43px;
+    left: 322.33px;
+    top: 221.74px;
+}
+
+.cardPeople
+{
+    position: absolute;
+    width: 29.71px;
+    height: 27.43px;
+    left: 333.34px;
+    top: 136.02px;
+}
+
+.cardClock
+{
+    position: absolute;
+    width: 29.74px;
+    height: 27.43px;
+    left: 333.77px;
+    top: 102.86px;
+}
+
+.cardDiv
+{
+    position: absolute;
+    width: 480.06px;
+    height: 284.61px;
+    left: 208.24px;
+    top: 1400px;
+}
