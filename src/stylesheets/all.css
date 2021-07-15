@@ -949,7 +949,8 @@
     left: 0px;
     top: 0px;
 
-    background: #DAF3F9;
+    background: #DAF3F9; 
+
     border-radius: 30px;
 }
 
@@ -1352,6 +1353,7 @@ input {
     box-sizing: border-box;
     border-radius: 100px;
 }
+
 .boost {
     position: absolute;
     width: 572.33px;
@@ -1359,9 +1361,6 @@ input {
     left: 133px;
     top: 612px;
 }
-
-
-
 .noBoostBtn {
     position: absolute;
     width: 259px;
@@ -1401,6 +1400,29 @@ input {
     color: #C5AEF9;
     cursor: pointer;
 }
+.yesBoost{
+    position: absolute;
+    width: 601px;
+    height: 256px;
+    left: 104px;
+    top: 723px;
+
+    background: #FBF1F0;
+    border-radius: 20px;
+}
+#boostInput{
+    position: absolute;
+    width: 132px;
+    height: 45px;
+    left: 133px;
+    top: 655px;
+    
+    background: #FFFFFF;
+    border: 3px solid #7343F2;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+
 .uploadBtn {
     position: absolute;
     width: 340px;
@@ -1532,3 +1554,125 @@ input {
     cursor: pointer;
 }
 
+.surveys
+{
+    position: absolute;
+    width: 1514px;
+    height: 1897.65px;
+    left: 203px;
+    top: 1547px;
+}
+
+.oneOne
+{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.oneTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 0px;
+}
+.oneThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 0px;
+}
+.twoOne
+{
+    position: absolute;
+    left: 0px;
+    top: 324.61px;
+}
+.twoTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 324.61px;
+}
+.twoThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 324.61px;
+}
+
+.threeOne
+{
+    position: absolute;
+    left: 0px;
+    top: 649.22px;
+}
+.threeTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 649.22px;
+}
+.threeThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 649.22px;
+}
+
+.fourOne
+{
+    position: absolute;
+    left: 0px;
+    top: 973.83px;
+
+}
+.fourTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 973.83px;
+}
+.fourThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 973.83px;
+}
+
+.fiveOne
+{
+    position: absolute;
+    left: 0px;
+    top: 1298.44px;
+}
+.fiveTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 1298.44px;
+}
+.fiveThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 1298.44px;
+}
+
+.sixOne
+{
+    position: absolute;
+    left: 0px;
+    top: 1623.05px;
+}
+.sixTwo
+{
+    position: absolute;
+    left: 514.35px;
+    top: 1623.05px;
+}
+.sixThree
+{
+    position: absolute;
+    left: 1028.7px;
+    top: 1623.05px;
+}

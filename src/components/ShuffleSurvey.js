@@ -9,7 +9,7 @@ const ShuffleSurvey = () => {
     const title = "Test Survey"
     const desc = "this is a survey description"
     const length = 10
-    const creditBoost= 20
+    const creditBoost = 20
     
     return (
         <div>
