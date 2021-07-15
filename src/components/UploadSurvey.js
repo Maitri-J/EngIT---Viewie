@@ -88,7 +88,7 @@ const UploadSurvey = () => {
             (!currentUser)? 
                 <div>
                     <p>Please Login</p>
-                    <Link to="/login">Login Here</Link>
+                    <Redirect to="/login" />
                 </div>
             :
             <div className="upload" id="upload">

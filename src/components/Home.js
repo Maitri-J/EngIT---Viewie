@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { FBaseDB } from '../tools/Firebase'
 import SurveyCard from './SurveyCard'
 import { addSurvey } from "../tools/Firebase"
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import UploadSurvey from './UploadSurvey'
 import { useAuthContext } from '../context/AuthProviders'
 import TopNav from './Topnav'
@@ -126,7 +126,7 @@ const Home = () => {
 
                 <div>
                     <TopNav noCredits={userData.noCredits}/>
-                    <button onClick={logout}>Logout</button>
+                    <Redirect to="/"><button onClick={logout}>Logout</button></Redirect>
                     <div className="loggedInHome">
                         <span className="startText">Start Sharing</span>
                         <span className="surveysText">SURVEYS & FORMS</span>
