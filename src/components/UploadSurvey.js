@@ -3,6 +3,7 @@ import { useAuthContext } from '../context/AuthProviders'
 import { addSurvey } from '../tools/Firebase'
 import { Link, Redirect } from 'react-router-dom'
 import TopNav from './Topnav'
+import yesBtn from './yesBtn'
 
 
 
@@ -55,11 +56,30 @@ const UploadSurvey = () => {
         }, 3000);
     }
 
+    /*
+    // display extra line of user wants to boost
     const showBoost = () => {
         setMessage("boost option selected");
+        /*
+        return(
+        <div className="yesBoost">
+            <span className="yesBoostText">How many credits would you like to use?<br/>
+            Each 50 credit will ... boost your survey for x minutes.</span>
+            <input type="number" id="boostInput" min="0" max="500" ref={boostRef} required={true}/>            
+        </div>
+        )
+
     }
 
+    // assign boost to zero if user decide to not boost
+    const noBoost = () => {
+        boostRef.current.value = 0; 
+    }
+    */
 
+
+
+    
     return (
         <div>
             {/* Prompt user to login if they are attempting to upload survey without account,
@@ -73,7 +93,7 @@ const UploadSurvey = () => {
             :
             <div className="upload" id="upload">
                 <TopNav noCredits={0}/>
-                <span class="upload-title">Let’s upload your survey</span>
+                <span className="upload-title">Let’s upload your survey</span>
             
                 <form onSubmit={SubmitForm}>
 
@@ -86,21 +106,33 @@ const UploadSurvey = () => {
 
                         <label className="estimated-time">Estimated time to finish this survey</label>
                         <input type="number" id="timeInput" min="1" max="120" ref={durationRef} required={true}
-                        placeholder="   minutes" textAlign='center'/><br />
+                        placeholder="   minutes"/><br />
 
                         {/* max participants 1k for now, can change later*/} 
                         <label className="max-participants">How many participants do you need for your project?</label>
                         <input type="number" id="participantsInput" min="1" max="1000" ref={maxParticipantsRef} required={true} 
-                        placeholder="    people" textAlign='center'/><br />
+                        placeholder="    people"/><br />
 
                         {/* Would you like to boost your survey? - goes here  */}
-                        <label className="boost">How many credit would you like to use to boost survey?</label>
+                        <label className="boost">How many credits would you like to use?</label>
+                        <input type="number" id="boostInput" min="0" max="500" ref={boostRef} required={true}
+                        placeholder="    credits"/><br />            
+
+                        {/*
                         <div>
-                            <input type="submit" class="noBoostBtn" value="Nah I'm good for now" onClick={showBoost} />
-                            <input type="submit" class="yesBoostBtn" value="Hells yeah" onClick={showBoost} />
                             
-                        </div>
-                        <input type="number" id="boostInput" min="0" max="500" ref={boostRef} required={true}/>
+                            <input type="submit" class="noBoostBtn" value="Nah I'm good for now" onClick={noBoost} />
+                            <yesBtn/>
+                            
+                            <input type="submit" class="yesBoostBtn" value="Hells yeah" onClick={
+                                <div className="yesBoost">
+                                    <span className="yesBoostText">How many credits would you like to use?<br/>
+                                    Each 50 credit will ... boost your survey for x minutes.</span>
+                                    <input type="number" id="boostInput" min="0" max="500" ref={boostRef} required={true}/>            
+                                </div>
+                            } />                            
+                        </div>  
+                        */}              
                     </div>
                     
                     <div className="right-survey">

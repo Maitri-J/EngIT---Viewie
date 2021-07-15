@@ -1351,6 +1351,7 @@ input {
     box-sizing: border-box;
     border-radius: 100px;
 }
+
 .boost {
     position: absolute;
     width: 572.33px;
@@ -1358,9 +1359,6 @@ input {
     left: 133px;
     top: 612px;
 }
-
-
-
 .noBoostBtn {
     position: absolute;
     width: 259px;
@@ -1400,6 +1398,29 @@ input {
     color: #C5AEF9;
     cursor: pointer;
 }
+.yesBoost{
+    position: absolute;
+    width: 601px;
+    height: 256px;
+    left: 104px;
+    top: 723px;
+
+    background: #FBF1F0;
+    border-radius: 20px;
+}
+#boostInput{
+    position: absolute;
+    width: 132px;
+    height: 45px;
+    left: 133px;
+    top: 655px;
+    
+    background: #FFFFFF;
+    border: 3px solid #7343F2;
+    box-sizing: border-box;
+    border-radius: 100px;
+}
+
 .uploadBtn {
     position: absolute;
     width: 340px;
