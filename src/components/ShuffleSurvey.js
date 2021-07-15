@@ -6,18 +6,16 @@ import SurveyCard from './SurveyCard'
 import { useAuthContext } from '../context/AuthProviders'
 
 const ShuffleSurvey = () => {
-    const surveyData = {
-        title: "Test Survey",
-        desc: "this is a survey description",
-        length: 10,
-        creditBoost: 20
-    }
+    const title = "Test Survey"
+    const desc = "this is a survey description"
+    const length = 10
+    const creditBoost= 20
     
     return (
         <div>
             <TopNav noCredits={0}/>
             <div className="cardDiv">
-                <SurveyCard surveyInfo={surveyData}/>
+                <SurveyCard title={title} desc={desc} length={length} creditBoost={creditBoost}/>
             </div>
         </div>
     )

@@ -2,6 +2,9 @@
 import './stylesheets/App.css';
 import Routes from './context/Routes';
 
+import firebase from 'firebase/app';
+
+
 function App() {
   return (
       <div>
