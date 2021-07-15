@@ -21,7 +21,7 @@ firebase.auth().onAuthStateChanged((user) => {
 
 // js function for time selection
 for (var i = 1; i <= 24; i++) {
-    var select = document.getElementById("hours");
+    var select = document.getElementById("durationInput");
     var option = document.createElement("OPTION");
     select.options.add(option);
     option.text = i;
