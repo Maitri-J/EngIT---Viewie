@@ -3,6 +3,12 @@ import { Link } from 'react-router-dom'
 
 const SurveyCard = ({ title, desc, length, creditBoost }) => {
     return (
+        <Link to={{
+            pathname: "/complete",
+            state: {
+              link: "https://docs.google.com/forms/d/e/1FAIpQLSejd99Ca9klqZYVNP0WLEJJJ024jRqQRDX_Lf5erHR4FFWGeg/viewform?embedded=true",
+            },
+            }}>
         <div className="surveyBox">
             <span className="cardTitle">{title}</span>
             <span className="cardDesc">{desc}</span>
@@ -14,6 +20,7 @@ const SurveyCard = ({ title, desc, length, creditBoost }) => {
             <img src="images/people.png" className="cardPeople"/>
             <img src="images/clock.png" className="cardClock"/>
         </div>
+        </Link>
     )
 }
 
