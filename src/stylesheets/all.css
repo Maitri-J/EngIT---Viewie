@@ -1243,7 +1243,7 @@
 .helpText
 {
     position: absolute;
-    width: 829px;
+    width: 1000px;
     height: 53px;
     left: 538px;
     top: 1436px;
@@ -1764,4 +1764,22 @@ input {
     left: 468px;
     top: 220px;
     z-index: 1;
+}
+
+.dots
+{
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 414px;
+    top: 26px;
+}
+
+.boostDash
+{
+    position: absolute;
+    width: 66px;
+    height: 30px;
+    left: 328px;
+    top: 20px;
 }

@@ -136,7 +136,7 @@ const Home = () => {
                     </div>
                     <img src="images/searchBar.png" className="searchBar"/>
                     <Link to="/shufflesurvey"><span className="homeShuffleBtn">Shuffle</span></Link>
-                    <span className="helpText">Help complete surveys without logging in</span>
+                    <span className="helpText">Get Credits From Helping Others by Completing Survey</span>
                     <div className="surveys">
 
                         {/* {
