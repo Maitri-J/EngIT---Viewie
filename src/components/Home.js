@@ -96,7 +96,7 @@ const Home = () => {
                 : 
 
                 <div>
-                    <TopNav noCredits={0}/>
+                    <TopNav noCredits={userData.noCredits}/>
                     <button onClick={logout}>Logout</button>
                     <div className="loggedInHome">
                         <span className="startText">Start Sharing</span>
