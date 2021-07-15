@@ -55,30 +55,6 @@ const Dashboard = () => {
             console.log(res1);
 
             setuserSurveys(res1);
-
-        //     // console.log(JSON.stringify(surveyData));
-            
-        //     var res1 = [];
-        //     for(var i in surveyData){
-        //         // console.log(i)
-        //         // console.log(surveyData[i])
-
-        //         var res2 = [];
-
-        //         // converts the object to an array
-        //         res2.push(Object.values(surveyData[i]));
-        //         // console.log(res2);
-
-        //         // push the array into the final array
-        //         res1.push(res2);
-        //     }
-
-        //     // console.log(res1);
-        //     // Array order: [creditBoost, desc, length, link, publisherUID, surveyUID, title]
-
-            // setuserSurveys(res1);
-            
-            // setuserSurveys(surveyData);
         });
 
         
