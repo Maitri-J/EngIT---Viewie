@@ -9,8 +9,6 @@ const Dashboard = () => {
             User Profile Information + Completed Surveys + Uploaded Surveys Go Here
             <Link to="/uploadsurvey">Create New Survey</Link> + 
             <Link to="/shufflesurvey">Shuffle</Link>
-
-
         </div>
     )
 }
