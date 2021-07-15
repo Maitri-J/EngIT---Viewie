@@ -22,6 +22,7 @@ const addSurvey = (surveyInfo, userUID) => {
         desc: surveyInfo.desc,
         link: surveyInfo.link,
         creditBoost: parseInt(surveyInfo.creditBoost),
+        surveyUID: newSurveyRef.key,
         length: parseInt(surveyInfo.length),
         tags: surveyInfo.tags
     });

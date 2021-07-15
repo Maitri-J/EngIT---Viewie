@@ -109,7 +109,7 @@ const UploadSurvey = () => {
                     </div>
                     
                     <div class="lower-button">
-                        <button type="submit" class="cancelBtn" onclick="goBack()"> Cancel </button> 
+                        <Link to="/dashboard"><button class="cancelBtn" onclick="goBack()"> Cancel </button> </Link>
                         <button type="submit" class="uploadBtn"> Upload </button>
                     </div> 
 
