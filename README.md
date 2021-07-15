@@ -1,8 +1,15 @@
+# Open Viewie
+pre-requisite:
+- A code editor
+- node.js installed 
+- see "Getting Started with Create React App" below
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## How to setup the React App:
+in the terminal of your code editor:
 1. `npm install`
    Install the npm packages required to run the react app
 
