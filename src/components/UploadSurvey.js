@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { addSurvey } from '../tools/Firebase'
 import { useAuthContext } from '../context/AuthProviders'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 const UploadSurvey = () => {
     const surveyLinkRef = useRef();
@@ -15,6 +15,7 @@ const UploadSurvey = () => {
     const { currentUser } = useAuthContext();
     
     const [message, setMessage] = useState(null);
+    const [isSubmitted, setSubmitted] = useState(false);
 
     const SubmitForm = (e) => {
         e.preventDefault();
@@ -36,12 +37,17 @@ const UploadSurvey = () => {
             tags: []
         }
 
-        console.log(JSON.stringify(currentUser));
-        console.log(JSON.stringify(currentUser.uid));
+        // console.log(JSON.stringify(currentUser));
+        // console.log(JSON.stringify(currentUser.uid));
 
         addSurvey(surveyInfo, currentUser.uid);
 
         setMessage("Survey has been successfully uploaded");
+
+        // Provides a delay so that user knows survey has been uploaded successfully
+        setTimeout(() => {
+            setSubmitted(true);
+        }, 3000);
     }
 
 
@@ -88,6 +94,11 @@ const UploadSurvey = () => {
                     <button type="submit">Done</button>     
 
                 </form>
+            }
+
+            {/* Redirect user to dashboard if survey has been submitted */}
+            {
+                (isSubmitted) && <Redirect to="/dashboard"/>
             }
         </div>
     )

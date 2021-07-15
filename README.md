@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## How to setup the React App:
+1. `npm install`
+   Install the npm packages required to run the react app
+
+2. `npm start`
+   Runs the app in localhost:3000 
+
 ## Available Scripts
 
 In the project directory, you can run:

@@ -26,6 +26,7 @@ const addSurvey = (surveyInfo, userUID) => {
     });
 }
 
+// adds new user to firebase under users
 const addNewUsertoFBaseDB = (user, username) => {
     const userRef = FBaseDB.ref(`users/${user.uid}`);
     // const newUsersRef = userRef.push();
@@ -39,5 +40,6 @@ const addNewUsertoFBaseDB = (user, username) => {
         surveysCompleted: {}
     });
 }
+
 
 export { FBase, FBaseAuth, FBaseDB, addSurvey, addNewUsertoFBaseDB, firebase };
